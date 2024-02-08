@@ -1,0 +1,48 @@
+@mixin header_h1 {
+    font-family: "Jura", "sans-serif";
+    font-size: 4.5rem;
+    font-weight: bold;
+}
+
+@mixin header_h4 {
+    font-family: "Roboto", "sans-serif";
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@mixin desc {
+    font-family: "Roboto", "sans-serif";
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+@mixin link {
+    font-family: "Roboto", "sans-serif";
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+// -------------------------------------------------------------- //
+@mixin header {
+    font-family: "Jura", "sans-serif";
+    font-size: 4.5rem;
+    font-weight: bold;
+}
+
+@mixin fz_24 {
+    font-family: "Roboto", "sans-serif";
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@mixin fz_18 {
+    font-family: "Roboto", "sans-serif";
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+@mixin fz_16 {
+    font-family: "Roboto", "sans-serif";
+    font-size: 1rem;
+    font-weight: 400;
+}

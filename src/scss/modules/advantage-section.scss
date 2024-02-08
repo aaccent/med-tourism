@@ -1,0 +1,152 @@
+.advantage-section {
+    position: relative;
+    &:before, &:after {
+        background-image: url(../images/advantage_line.svg);
+        background-position: left bottom;
+        background-size: cover;
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0.9375rem;
+        opacity: 0.08;
+    }
+    &:before {
+        top: 0
+    }
+    &:after {
+        bottom: 0
+    }
+    &__bg {
+        background-color: $purple;
+        position: absolute;
+        top: 0.9375rem;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 1.875rem);
+        opacity: 0.08;
+        z-index: -1;
+    }
+    &__header {
+        margin: 0 auto;
+        max-width: 62.5rem;
+        text-align: center;
+    }
+    &__title {
+        font-size: 3.25rem;
+        @include adaptive_value(font-size, 24, 52, 576, 1920);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &__desc {
+        font-size: 1.5rem;
+        @include adaptive_value(font-size, 14, 24, 576, 1920);
+        font-weight: 400;
+        line-height: 1.5;
+        margin: 1.25rem 0 0;
+    }
+    &__body {
+        margin: 6.5625rem 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 1.25rem;
+        row-gap: 6.25rem;
+        @include adaptive_value(row-gap, 40, 100, 576, 1920);
+    }
+    &__advantage-item {
+        flex-basis: calc((100% - 3.75rem) / 4);
+    }
+    @include desktop {
+        &__advantage-item {
+            flex-basis: calc((100% - 2.5rem) / 3);
+        }
+    }
+    @include gap {
+        &__body {
+            margin-top: 4.375rem;
+            row-gap: 3.125rem;
+        }
+        &__advantage-item {
+            flex-basis: calc(50% - 0.875rem);
+        }
+    }
+    @include phone {
+        &__advantage-item {
+            flex-basis: 100%;
+        }
+    }
+}
+
+.advantage-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.875rem;
+    &__icon {
+        padding: 2.75rem;
+        @include adaptive_value(padding, 28, 44, 576, 1920);
+        position: relative;
+        &:before, &::after {
+            border-radius: 30% 46.7%;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        &:before {
+            border: 1px solid $purple;
+        }
+        &:after {
+            background-color: $purple;
+            background-clip: content-box;
+            padding: 0.5rem;
+            opacity: 0.08;
+        }
+        img {
+            @include adaptive_value(--side-value, 40, 62, 576, 1920);
+            width: var(--side-value, 3.875rem);
+            height: var(--side-value, 3.875rem);
+            vertical-align: top;
+            object-fit: contain;
+        }
+    }
+    &__desc {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.5;
+        text-align: center;
+        max-width: 340px;
+    }
+    @include tablet {
+        &__icon {
+            // padding: 1.875rem;
+            // img {
+            //     width: 3.125rem;
+            //     height: 3.125rem;
+            // }
+            // &:before, &:after {
+            //     border-radius: 35px 60px;
+            // }
+        }
+        &__desc {
+            font-size: 20px
+        };
+    }
+    @include gap {
+        &__desc {
+            font-size: 1.125rem;
+        }
+    }
+    @include phone {
+        gap: 0.875rem;
+        &::before, &:after {
+
+            // border-radius: 1.875rem 3.125rem;
+        }
+    }
+}
+

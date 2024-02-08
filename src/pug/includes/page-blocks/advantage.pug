@@ -1,0 +1,24 @@
+mixin advantage-item(item)
+    .advantage-section__advantage-item.advantage-item 
+        .advantage-item__icon 
+            img(src=item.icon alt="")
+        p.advantage-item__desc= item.desc
+
+section.advantage-section.section.section_py
+    .advantage-section__bg
+    .container
+        .advantage-section__header 
+            h2.advantage-section__title Почему клиенты выбирают нас
+            p.advantage-section__desc Комфорт и безопасность наших пациентов всегда являются нашим приоритетом при работе с нами. Сотрудничая с лучшими медицинскими учреждениями Турции, мы предлагаем медицинские услуги мирового уровня по доступным ценам.
+        .advantage-section__body
+            -
+                var advantageList = [
+                    { icon: "./images/advantage_01.svg", desc: "Качественное преимущество в несколько строк" },
+                    { icon: "./images/advantage_02.svg", desc: "Качественное преимущество в несколько строк" },
+                    { icon: "./images/advantage_03.svg", desc: "Качественное преимущество в несколько строк" },
+                    { icon: "./images/advantage_04.svg", desc: "Качественное преимущество в несколько строк" },
+                    { icon: "./images/advantage_05.svg", desc: "Качественное преимущество в несколько строк" },
+                    { icon: "./images/advantage_06.svg", desc: "Качественное преимущество в несколько строк" }
+                ]
+            each advantage in advantageList   
+                +advantage-item(advantage)

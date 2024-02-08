@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        block head
+    body 
+        include ../includes/header
+        block content 
+        include ../includes/footer
+        include ../includes/svg-sprite
+        .popup 
+            .popup__container 
+                .popup__content
+                    .popup__close
+                        button.close(type="button")
+                    .form-block
+                        .form-block__header 
+                            h4.form-block__title 
+                                | Ответим на все ваши вопросы, оставьте заявку и мы свяжемся с вами
+                            p.form-block__subtitle
+                                | Комфорт и безопасность наших пациентов всегда являются нашим приоритетом при работе с нами. 
+                        .form-block__body 
+                            .form-block__page.form-block__page_one 
+                                form.form-block__form.form.popup__form(action="#" name="order-call") 
+                                    .form__control
+                                        input.form__input.form__input_required(type="text" id="name" name="name")
+                                        label.form__label(for="name") Ваше имя
+                                    .form__control
+                                        input.form__input.form__input_required(type="tel" id="phone" name="phone" autocomplete="off")
+                                        label.form__label(for="phone") Ваш телефон
+                                    button.form__submit(type="submit")
+                                        span Получить консультацию
+                                        .spinner
+                                    .form__agreement 
+                                        | Нажимая кнопку «получить консультацию», вы даёте согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности
+                            .form-block__page.form-block__page_two
+                                .form-block__thanks Спасибо, ваша заявка была получена                        
+                        
+        block scripts

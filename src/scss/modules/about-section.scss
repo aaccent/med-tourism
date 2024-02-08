@@ -1,0 +1,156 @@
+.about-section {
+    &__wrapper {
+        border: 1px solid rgba($color: $black, $alpha: 0.2);
+        border-radius: 1.875rem;
+        position: relative;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 5rem 0 5rem 5rem;
+        width: calc(1000 / 1860 * 100%);
+        min-width: 680px;
+    }
+    &__paragraph {
+        font-size: 2.625rem;
+        @include adaptive_value(font-size, 22, 42, 576, 992);
+        font-weight: 700;
+        text-transform: uppercase;
+        &:first-child {
+            margin: 0 0 1.25rem;
+        }
+        span {
+            background-repeat: no-repeat;
+        }
+    }
+    &__desc {
+        font-size: 1.5rem;
+        @include adaptive_value(font-size, 14, 24, 576, 992);
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    &__more {
+        border: 1px solid $black;
+        border-radius: 3.125rem 6.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.875rem;
+        align-self: flex-start;
+        font-size: 1.125rem;
+        @include adaptive_value(--padding-y, 17, 34, 576, 992);
+        @include adaptive_value(--padding-x, 24, 40, 576, 992);
+        padding: var(--padding-y, 2.125rem) var(--padding-x, 2.5rem);
+        text-transform: uppercase;
+        transition: border-radius 0.3s ease 0s;
+        &:last-child {
+            margin: 3.75rem 0 0;
+            @include adaptive_value(margin-top, 20, 60, 576, 992);
+        }
+        @include ishover {
+            border-radius: 6.25rem;
+        }
+        svg {
+            transform: rotate(-45deg);
+        }
+    }
+    &__img {
+        position: absolute;
+        bottom: 0;
+        width: 668px;
+        height: calc(100% + 104px);
+        @include adaptive_value(height, 450, 650, 576, 768);
+        right: 7.25rem;
+        @include adaptive_value(right, -150, 116, 1280, 1920);
+        @include adaptive_value(margin-right, -120, 0, 480, 992);
+        img {
+            color: $green;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            object-fit: contain;
+            object-position: bottom center;
+        }
+        &:before {
+            background-image: url(../images/figure.svg);
+            background-size: contain;
+            content: "";
+            // content:  url(../images/figure.svg);
+            position: absolute;
+            top: 20%;
+            right: -3.5rem;
+            @include adaptive_value(right, 0, -57, 1280, 1920);
+            width: 453px;
+            height: 446px;
+            z-index: -1;
+        }
+    }
+    @media screen and (max-width: 1800px) {
+        &__wrapper {
+            overflow: hidden;
+        }
+    }
+    @include laptop {
+        &__content {
+            padding: 40px 0 40px 40px
+        }
+    }
+    @include desktop {
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        &__content {
+            margin-bottom: -7.75rem;
+            padding: 20px 20px 0 ;
+            min-width: 0;
+            width: auto;
+        }
+        &__img {
+            align-self: flex-end;
+            position: relative;
+            bottom: auto;
+            right: auto;
+            width: auto;
+            height: 40.625rem;
+            img {
+                position: static;
+            }
+            &:before {
+                top: 0;
+                right: 30%;
+            }
+        }
+    }
+    @include gap {
+        &__img {
+            &:before {
+                top: auto;
+                left: -2.5rem;
+                right: auto;
+                bottom: -1.875rem;
+            }
+
+        }
+    }
+    @include phone {
+        &__content {
+            margin-bottom: -4.75rem;
+        }
+        &__more {
+            font-size: 14px;
+            svg {
+                width: 1.125rem;
+                height: 1.125rem;
+            }
+        }
+        &__img {
+            &::before {
+                width: 259px;
+                height: 255px;
+            }
+        }
+    }
+}

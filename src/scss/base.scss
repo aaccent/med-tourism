@@ -1,0 +1,75 @@
+:root {
+
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background-color: $background-color;
+    color: $black;
+    font-family: "Nunito", "sans-serif";
+    font-weight: 400;
+    font-style: normal;
+    min-width: 390px;
+    &._lock {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 1.875rem;
+    width: 100%;
+    @include phone {
+        padding: 0 1rem
+    }
+}
+
+.section {
+    &__title {
+        font-size: 3.25rem;
+        @include adaptive_value(font-size, 24, 52, 576, 1920);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &_py {
+        // @include adaptive_value(--padding-y, 50, 100, 576, 1920);
+        // padding: var(--padding-y, 6.25rem) 0;
+        padding-top: 6.25rem;
+        padding-bottom: 6.25rem;
+        @include tablet {
+            padding-top: 4.375rem;
+            padding-bottom: 4.375rem;
+        }
+        @include phone {
+            padding-top: 3.125rem;
+            padding-bottom: 3.125rem;
+        }
+    }
+}

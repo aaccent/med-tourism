@@ -1,0 +1,111 @@
+.treatment-section {
+    &__title {
+        text-align: center;
+    }
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 6.25rem 0 0;
+        column-gap: 1.25rem;
+        row-gap: 2.5rem;
+    }
+    &__step {
+        flex-basis: calc((100% - 3.75rem) / 4);
+        position: relative;
+        &:first-child {
+            .step-item__number-wrapper {
+                position: relative;
+                &:before {
+                    border: 1px dashed $green;
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: calc(300% + 3.75rem)
+                }
+            }
+        }
+    }
+    @include gap {
+        &__body {
+            margin-top: 4.375rem
+        }
+        &__step {
+            flex-basis: calc(50% - 0.875rem);
+            &:first-child {
+                .step-item__number-wrapper {
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }   
+    }
+    @include phone {
+        &__step {
+            flex-basis: 100%;
+        }
+    }
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.875rem;
+    &__number-wrapper {
+        display: flex;
+        align-self: stretch;
+        justify-content: center;
+    }
+    &__number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $background-color;
+        font-family: "Jura", "sans-serif";
+        font-size: 2.75rem;
+        line-height: 1.5;
+        position: relative;
+        @include adaptive_value(--side, 96, 150, 576, 1920);
+        width: var(--side, 9.375rem);
+        height: var(--side, 9.375rem);
+        &:before, &::after {
+            border-radius: 30% 46.7%;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        &:before {
+            border: 1px solid $green;
+        }
+        &:after {
+            background-color: $green;
+            background-clip: content-box;
+            padding: 0.5rem;
+        }
+    }
+    &__desc {
+        text-align: center;
+    }
+    @include tablet {
+        gap: 1.25rem
+    }
+    @include min_gap {
+        &__desc {
+            max-width: 85%;
+        }
+    }
+    @include gap {
+        &__number {
+            font-size: 2.25rem;
+        }
+    }
+    @include phone {
+        gap: 0.875rem;
+    }
+}

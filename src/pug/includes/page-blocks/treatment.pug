@@ -1,0 +1,19 @@
+mixin treatment-step(number, desc)
+    .treatment-section__step.step-item
+        .step-item__number-wrapper
+            span.step-item__number #{`0${number + 1}`}
+        .step-item__desc= desc
+
+section.treatment-section.section.section_py
+    .container
+        h2.treatment-section__title.section__title Этапы лечения
+        .treatment-section__body
+            - 
+                var stepList = [
+                    "Название этапа в несколько строк которое раскрывает смысл этапа",
+                    "Название этапа в несколько строк которое",
+                    "Название этапа в несколько",
+                    "Название этапа в несколько строк которое раскрывает смысл этапа"
+                ]
+            each val, idx in stepList
+                +treatment-step(idx, val)

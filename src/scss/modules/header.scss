@@ -1,0 +1,493 @@
+.header {
+    padding: 1.25rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s cubic-bezier(.3,.86,.36,.95) 0s;
+    z-index: 10;
+    &:before {
+        background-color: $white;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+    &__logo {
+
+    }
+    &__img {
+        width: auto;
+        height: 6.25rem;
+        vertical-align: top;
+        // @include adaptive_value(width, 74, 154, 576, 1920);
+    }
+    &__nav {
+        margin-left: 12.5rem;
+        margin-right: 1.875rem;
+        @include adaptive_value(margin-left, 20, 200, 1280, 1920);
+    }
+    &__menu-list {
+        display: flex;
+        gap: 1.875rem;
+        @include adaptive_value(gap, 10, 30, 1280, 1920);
+        // @media screen and (max-width: 1920px) and (min-width: 1280px) {
+        //     gap: calc(10px + 20 * (100vw - 1280px) / (1920 - 1280));            
+        // }
+        // @include desktop {
+        //     gap: 0.675rem;
+        // }
+    }
+    &__menu-item {
+        border: 1px solid rgba($color: $black, $alpha: 0.2);
+        border-radius: 6.25rem;
+        position: relative;
+    }
+    &__menu-link {
+        display: inline-flex;
+        display: flex;
+        align-items: center;
+        gap: 0.675rem;
+        font-family: "Nunito", "sans-serif";
+        @include link;
+        padding: 0.84375rem 1.5rem;
+        transition: border-color 0.15s ease 0s;
+        white-space: nowrap;
+        @include ishover {
+            border-color: $black;
+        }
+        svg {
+            margin: 2px;
+        }
+    }
+    // &__submenu {
+    //     pointer-events: none;
+    //     position: absolute;
+    //     top: 100%;
+    //     left: -1.875rem;
+    //     width: 31.25rem;
+    //     opacity: 0;
+    //     transform: translate(0, -1.5rem);
+    //     transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+    //     // height: 42.1875rem;
+    // }
+    &__actions {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        gap: 4rem;
+    }
+    &__call {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    &__call-phone {
+        @include fz_24;
+        white-space: nowrap;
+    }
+    &__call-desc {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        white-space: nowrap;
+        @media screen and (max-width: $laptop) and (min-width: $tablet) {
+            display: none;
+        }
+    }
+    &__call-icon {
+        svg {
+            vertical-align: top;
+        }
+        path {
+            fill: $black;
+            opacity: 0.5
+        }
+    }
+    &__call-label {
+        @include fz_18;
+        text-transform: uppercase;
+    }
+    &__button {
+        border: 1px solid $black;
+        color: $black;
+        font-size: 1.125rem;
+        padding: 0.875rem 2.5rem;
+        @include adaptive_value(padding-left, 24, 40, 1280, 1920);
+        @include adaptive_value(padding-right, 24, 40, 1280, 1920);
+        &_mobile {
+            background-color: $black;
+            display: none;
+            color: $beige;
+            padding: 1.5rem 2rem;
+        }
+    }
+    &__menu {
+        border: 1px solid rgba($color: $black, $alpha: 0.5);
+        border-radius: 6.25rem;
+        display: none;
+        align-items: center;
+        cursor: pointer;
+        gap: 0.625rem;
+        margin-left: 1.5625rem;
+        padding: 0.75rem 1.5rem;
+    }
+    &__menu-label {
+        font-family: "Roboto", "sans-serif";
+        font-size: 14px;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+    &__burger {
+        // box-sizing: content-box;
+        position: relative;
+        padding: 4px 2px;
+        width: 38px;
+        height: 30px;
+        &:before, &:after {
+            content: "";
+            transform-origin: center center;
+            transition: transform 0.3s ease 0s;
+        }
+        &:before, &:after, span {
+            background-color: $black;
+            border-radius: 4px;
+            position: absolute;
+            left: 2px;
+            width: calc(100% - 4px);
+            height: 4px
+        }
+        &:before { 
+            top: 4px
+        }
+        &:after {
+            bottom: 4px;
+        }
+        span {
+            top: calc(50% - 2px);
+            opacity: 1;
+            transition: opacity 0.2s ease 0s, transform 0.2s ease 0s;;
+        }
+        &_open {
+            &:before {
+                transform: translateY(9px) rotate(45deg);
+            }
+            &:after {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+            span {
+                opacity: 0;
+                transform: translate(25%, 0) scaleY(0.3);
+            }
+        }
+    }
+    &_show {
+        transition-duration: 0.5s;
+        // @include min_tablet {
+        //     padding: 0.8125rem 0;
+        // }
+    }
+    &_hide {
+        transform: translate(0, -100%);
+    }
+    @include laptop {
+        &__actions {
+            column-gap: 1.25rem;
+            row-gap: 0.5rem;
+        }
+    }
+    @include desktop {
+        // &__actions {
+        //     flex-wrap: wrap;
+        //     justify-content: flex-end;
+        // }
+        &__call-phone {
+            font-size: 1.25rem;
+        }
+        &__button {
+            &_desktop {
+                font-size: 1rem;
+                padding: 0.5rem 1.5rem;
+            }
+        }
+    }
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
+        &__menu-link {
+            font-size: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        &__call-desc {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 1180px) {
+        &__actions {
+            flex-direction: column;
+        }
+    }
+    @include min_tablet {
+        &__menu-item {
+            @include ishover {
+                .header__submenu {
+                    pointer-events: auto;
+                    opacity: 1;
+                    transform: translate(0, 0);
+                }
+            }
+        }
+        &__submenu {
+            pointer-events: none;
+            position: absolute;
+            top: 100%;
+            left: -1.875rem;
+            width: 31.25rem;
+            opacity: 0;
+            transform: translate(0, -1.5rem);
+            transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+        }
+    }
+    @include tablet {
+        border-bottom: 1px solid rgba($color: $black, $alpha: 0.2);
+        &__img {
+            height: 4.75rem;
+        }
+        &__nav {
+            background-color: $white;
+            margin: 0;
+            padding: 2rem 1.25rem 6.25rem;
+            position: fixed;
+            top: 7.25rem;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 7.25rem);
+            overflow: auto;
+            transform: translate(0, -100vh);
+            transition: transform 0.5s ease 0s;
+            z-index: -2;
+            &_open {
+                transform: translate(0, 0);
+            }
+        }
+        // border-bottom: 1px solid rgba($color: $black, $alpha: 0.2);
+        &__menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.875rem;
+        }
+        &__menu-item {
+            border-radius: 40px;
+            overflow: hidden;
+            &_open {
+                .header__submenu {
+                    height: auto;
+                }
+            }
+        }
+        &__menu-link {
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+        &__menu {
+            display: flex;
+        }
+        &__submenu {
+            // display: none;
+            height: 0;
+            padding-top: 0;
+            position: static;
+            width: auto;
+            transform: none;
+            opacity: 1;
+        }
+        &__button { 
+            &_desktop {
+                display: none;
+            }
+            &_mobile {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1.5rem;
+                min-width: 28.125rem;
+                &:last-child {
+                    margin-top: 1.875rem;
+                }
+                svg {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+        }
+    }
+    @include gap {
+        &__container {
+            justify-content: space-between;
+            position: relative
+        }
+    }
+    @include phone {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        &__img {
+            height: 3rem;
+        }
+        &__nav {
+            top: 4.25rem;
+            padding-top: 0.875rem;
+            padding-bottom: 3.125rem;
+            height: calc(100% - 4.25rem);
+        }
+        &__menu {
+            padding: 0.5rem 1rem;
+        }
+        &__menu-list {
+            gap: 20px;
+            flex-direction: column;
+        }
+        &__menu-item {
+            border-radius: 1.25rem;
+        }
+        &__menu-link {
+            font-size: 1.125rem;
+            padding: 0.875rem 1.5rem;
+        }
+        &__burger {
+            padding: 4px 2px;
+            width: 18px;
+            height: 18px;
+            &:before, &:after, span {
+                left: 2px;
+                width: calc(100% - 4px);
+                height: 2px
+            }
+            span {
+                top: calc(50% - 1px);
+            }
+            &_open {
+                &:before {
+                    transform: translateY(4px) rotate(45deg);
+                }
+                &:after {
+                    transform: translateY(-4px) rotate(-45deg);
+                }
+            }
+        }
+        &__call-phone {
+            font-size: 16px;
+        }
+        &__call-label {
+            font-size: 12px;
+        }
+        &__menu-label {
+            font-size: 14px;
+        }
+        &__button {
+            &_mobile {
+                gap: 0.875rem;
+                font-size: 0.875rem;
+                padding: 1rem;
+                width: 100%;
+                min-width: 0;
+                svg {
+                    width: 1.125rem;
+                    height: 1.125rem;
+                }
+            }
+        }
+    }
+}
+
+.submenu {
+    font-family: "Nunito", "sans-serif";
+    padding-top: 1.25rem;
+    &__wrapper {
+        background-color: $white;
+        border-radius: 1.875rem;
+        padding: 2.5rem 1.25rem 0 2.5rem;
+    }
+    &__title {
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 0 0 1.25rem;
+        text-transform: uppercase;
+    }
+    &__categories {
+        padding-right: 2.5rem;
+        max-height: 35.75rem;
+        overflow: auto
+    }
+    &__category {
+        &:not(:last-child) {
+            margin: 0 0 1.875rem;
+        }
+    }
+    @include tablet {
+        &__title {
+            display: none;
+        }
+        &__wrapper {
+            padding: 1.25rem 1rem;
+        }
+    }
+    @include phone {
+        &__wrapper {
+            padding-left: 0.875rem;
+            padding-right: 0.875rem;
+        }
+    }
+}
+
+.submenu-category {
+    border-bottom: 1px solid rgba($color: $black, $alpha: 0.2);
+    &:not(:last-child) {
+        margin: 0 0 1.875rem;
+    }
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0 0 1.25rem;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 0 0 1.25rem
+    }
+    // &__item {
+    //     margin: 0 0 1.25rem
+    // }
+    &__link {
+        @include fz_24;
+        opacity: 0.6;
+    }
+    @include phone {
+        &__title, &__link {
+            font-size: 16px;
+        }
+        &__title {
+            margin-bottom: 0.875rem;
+        }
+        &__list {
+            gap: 0.875rem;
+            padding: 0 0 1.25rem;
+        }
+    }
+}

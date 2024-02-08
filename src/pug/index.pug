@@ -1,0 +1,20 @@
+extends templates/layout
+
+block head
+    title  
+    link(rel="stylesheet", href="css/libs/swiper-bundle.min.css")
+    link(rel="stylesheet", href="css/style.min.css")
+block content 
+    include ./includes/page-blocks/hero
+    include ./includes/page-blocks/services
+    include ./includes/page-blocks/about
+    include ./includes/page-blocks/advantage
+    include ./includes/page-blocks/treatment
+    include ./includes/page-blocks/reviews
+    include ./includes/page-blocks/clients
+    include ./includes/page-blocks/faq
+    include ./includes/page-blocks/article
+block scripts 
+    script(src='https://api-maps.yandex.ru/2.1/?apikey=4f70d3b1-f6e2-4ee2-bf65-83f325f91da4&load=package.standard&lang=en-UA' type='text/javascript')
+    script(src="js/libs/swiper-bundle.min.js")
+    script(src="js/app.min.js") 

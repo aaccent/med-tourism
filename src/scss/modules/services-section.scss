@@ -1,0 +1,87 @@
+.services-section {
+    &__header {
+    }
+    &__title {
+        font-size: 3.25rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        @include adaptive_value(font-size, 24, 52, 576, 1920)
+    }
+    &__body {
+        margin: 1.875rem 0 0;
+    }
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 1.25rem;
+        row-gap: 2.1875rem;
+    }
+    &__service-item {
+        flex-basis: calc((100% - 3.75rem) / 4);
+    }
+    @include tablet {
+        &__service-item {
+            flex-basis: calc((100% - 2.5rem) / 3);
+        }
+    }
+    @include min_gap {
+        &__grid {
+            padding: 0 0 3.125rem;
+        }
+    }
+    @include gap {
+        margin-top: 3.125rem;
+        &__body {
+            margin-top: 1.25rem;
+        }
+    }
+    @include phone {
+        &__grid {
+            column-gap: 0.8375rem;
+            row-gap: 1.25rem;
+        }
+        &__service-item {
+            flex-basis: calc(50% - 0.4375rem);
+        }
+    }
+}
+
+.service-item {
+    &__img {
+        border-radius: 1.875rem;
+        padding-top: calc(435 / 450 * 100%);   
+        position: relative;     
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__name {
+        font-size: 1.5rem;
+        // @include adaptive_value(font-size, 14, 24, 480, 1920);
+        font-weight: 400;
+        margin: 1.25rem 0 0;
+    }
+    @include tablet {
+        &__name {
+            font-size: 1.25rem;
+        }
+    }
+    @include gap {
+        &__name {
+            font-size: 1.125rem;
+        }
+    }
+    @include phone {
+        &__name {
+            font-size: 0.875rem;
+        }
+    }
+}

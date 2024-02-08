@@ -1,0 +1,28 @@
+mixin client-item(number)
+    article.clients-section__client.client-item
+        .client-item__inner-wrapper
+            img(src="./images/client_0" + number + ".png", alt="")
+
+section.clients-section.section.section_py
+    .container
+        .clients-section__header 
+            h2.clients-section__title.section__title Наши клиенты
+            .clients-section__swiper-buttons.swiper-buttons
+                .swiper-button-prev 
+                    svg(viewBox='0 0 25 25')
+                        use(xlink:href="#swiper-arrow")
+                    span Назад
+                .swiper-button-next
+                    span Далее
+                    svg(viewBox='0 0 25 25')
+                        use(xlink:href="#swiper-arrow")
+        .clients-section__body 
+            .clients-section__swiper.swiper 
+                .swiper-wrapper 
+                    each num in [1, 2, 3, 4, 1, 2, 3, 4]
+                        .swiper-slide 
+                            +client-item(num)                        
+                .clients-section__swiper-scrollbar.swiper-scrollbar
+            
+                    
+    

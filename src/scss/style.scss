@@ -1,0 +1,24 @@
+@import "base/_vars.scss";
+@import "base/_fonts.scss";
+@import "base/_icons.scss";
+@import "mixins/breakpoints.scss";
+@import "mixins/fonts.scss";
+@import "mixins/media.scss";
+@import "base.scss";
+
+@import "components/button.scss";
+@import "components/logo.scss";
+@import "components/popup.scss";
+
+@import "modules/header.scss";
+@import "modules/hero-section.scss";
+@import "modules/services-section.scss";
+@import "modules/about-section.scss";
+@import "modules/advantage-section.scss";
+@import "modules/treatment-section.scss";
+@import "modules/reviews-section.scss";
+@import "modules/clients-section.scss";
+@import "modules/faq-section.scss";
+@import "modules/article-section.scss";
+@import "modules/contact-us-section.scss";
+@import "modules/footer.scss";

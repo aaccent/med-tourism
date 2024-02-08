@@ -1,0 +1,136 @@
+.hero-section {
+    margin: 8.75rem 0 0;
+    &__container {
+    }
+    &__inner-wrapper {
+        background-image: url("../images/curve.svg");
+        background-position: bottom left;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        border-radius: 1.875rem;
+        display: flex;
+        column-gap: 1.5rem;
+        position: relative;
+        overflow: hidden;
+        &:before {
+            background: linear-gradient(180deg, #4cd4b0 0%, #4cd4b0 100%);
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.06;
+            z-index: -1;
+        }
+        // &:after {
+        //     background-image: url("../images/curve.svg");
+        //     background-position: bottom left;
+        //     background-repeat: no-repeat;
+        //     background-size: 100%;
+        //     content: "";
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     width: 100%;
+        //     height: 100%;
+        //     z-index: -1;
+        // }
+    }
+    &__content {
+        @include adaptive_value(--padding-value, 25, 60, 992, 1920);
+        padding-top: var(--padding-value, 3.75rem);
+        padding-left: var(--padding-value, 3.75rem);
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 4.5rem;
+        margin: 0 0 1.875rem;
+        text-transform: uppercase;
+        @include adaptive_value(font-size, 36, 72, 768, 1920)
+    }
+    &__button {
+        background-color: $purple;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        color: $beige;
+        font-size: 1.125rem;
+        @include adaptive_value(--padding-x, 24, 40, 576, 1280);
+        @include adaptive_value(--padding-y, 16, 30, 576, 1280);
+        padding: var(--padding-y, 1.875rem) var(--padding-x, 2.5rem);
+    }
+    &__img {
+        flex-basis: calc(630 / 1860 * 100%);
+        flex-shrink: 0;
+        // @include adaptive_value(height, 450, 550, 576, 992);
+        padding-top: 1.875rem;
+        padding-right: 11.5rem;
+        @include adaptive_value(padding-right, 0, 184, 992, 1920);
+        max-height: 40.625rem;
+        min-height: 28.125rem;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: top left;
+            vertical-align: top;
+        }
+    }
+    @include tablet {
+        &__inner-wrapper {
+            flex-direction: column;
+            row-gap: 3.125rem;
+        }
+        &__content {
+            padding-right: 1.5rem;
+            max-width: 40.625rem;
+        }
+        &__img {
+            flex-basis: auto;
+            padding-top: 0;
+            img {
+                width: auto;
+                max-width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+    @include gap {
+        &__img {
+            align-self: center;
+        }
+    }
+    @include phone {
+        margin-top: 5.9375rem;
+        &__content  {
+            margin: 0 auto;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &__title {
+            font-size: 1.625rem;
+            margin-bottom: 1.25rem;
+            text-align: center;
+        }
+        &__button {
+            font-size: 0.875rem;
+            gap: 0.75rem;
+            margin: 0 auto;
+            svg {
+                width: 1.125rem;
+                height: 1.125rem;
+            }
+        }
+        &__img {
+            width: calc(270 / 370 * 100%);
+            min-width: 270px;
+            min-height: 0;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        &__button {
+            margin: 0 auto;
+        }
+    }
+}

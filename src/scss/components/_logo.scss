@@ -1,0 +1,13 @@
+.logo {
+    img {
+        width: auto;
+        height: 6.25rem;
+        vertical-align: top;
+        @include tablet {
+            height: 4.75rem;
+        }
+        @include phone {
+            height: 3rem;
+        }
+    }
+}

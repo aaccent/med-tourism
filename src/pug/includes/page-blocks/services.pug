@@ -1,0 +1,27 @@
+mixin service-item(item)
+    .services-section__service-item.service-item
+        .service-item__img 
+            img(src=item.img, alt="")
+        h4.service-item__name= item.name
+                    
+section.services-section.section.section_py 
+    .services-section__header 
+        .container
+            h2.services-section__title Услуги
+    .services-section__body 
+        .container 
+            .services-section__grid 
+                -
+                    var servicesList = [
+                        { name: "Трансплантация бороды", img: "./images/service_01.png" },
+                        { name: "Ласик хирургия глаза", img: "./images/service_02.png" },
+                        { name: "Бихэктомия", img: "./images/service_03.png" },
+                        { name: "Трансплантация бровей", img: "./images/service_04.png" },
+                        { name: "Трансплантация волос", img: "./images/service_05.png" },
+                        { name: "Вся хиругия желудка", img: "./images/service_06.png" },
+                        { name: "Желудочное шунтирование", img: "./images/service_07.png" },
+                        { name: "Эстетика зубного эмпланта", img: "./images/service_08.png" },
+                    ]
+                each service in servicesList   
+                    +service-item(service)
+    

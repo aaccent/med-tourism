@@ -1,0 +1,109 @@
+.article-section {
+    &__inner-wrapper {
+        border: 1px solid rgba($color: $black, $alpha: 0.2);
+        border-radius: 1.875rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12.5rem;
+        @include adaptive_value(gap, 30, 200, 1280, 1920);
+        padding: 3.125rem;
+    }
+    &__article {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.875rem;
+    }
+    &__title {
+        font-size: 2.625rem;
+        @include adaptive_value(font-size, 22, 42, 576, 992);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &__text {
+        p {
+            font-size: 1.375rem;
+            font-weight: 400;
+            line-height: 1.5;
+            opacity: 0.7;
+            &:not(:last-child) {
+                margin: 0 0 3.125rem;
+            }
+        }
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        svg {
+            width: 24px;
+            height: 24px;
+            opacity: 0.5;
+        }
+        span {
+            font-size: 1.125rem;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+    };
+    &__img {
+        border-radius: 1.875rem;
+        flex-basis: calc(837 / 1860 * 100%);
+        flex-shrink: 0;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            vertical-align: top;
+        }
+    }
+    @include desktop {
+        &__inner-wrapper {
+            flex-direction: column-reverse;
+        }
+        &__img {
+            width: 100%;
+        }
+    }
+    @include tablet {
+        &__inner-wrapper {
+            padding: 2rem;
+        }
+    }
+    @include gap {
+        &__inner-wrapper {
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            gap: 1.25rem;
+        }
+        &__article {
+            gap: 1.25rem;
+        }
+        &__text {
+            p {
+                &:not(:last-child) {
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+    @include phone {
+        &__text {
+            p {
+                font-size: 0.875rem;
+            }
+        }
+        &__link {
+            svg {
+                width: 1.125rem;
+                height: 1.125rem;
+            }
+            span {
+                font-size: 0.875rem;
+            }
+        }
+    }
+}
