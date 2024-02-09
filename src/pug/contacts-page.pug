@@ -1,0 +1,102 @@
+extends templates/layout
+
+block head
+    title Контакты
+    link(rel="stylesheet", href="css/contacts-page.min.css")
+block content 
+    .container
+        nav.page__breadcrumbs.breadcrumbs 
+            ol.breadcrumbs__list 
+                li.breadcrumbs__item 
+                    a.breadcrumbs__link(href="/") Главная
+                li.breadcrumbs__item 
+                    a.breadcrumbs__link(href="#") Контакты   
+        .page__block
+            h1.page__title-h1 Контакты
+            ul.page__contacts-list.contacts-list 
+                li.contacts-list__item
+                    a.contact-item(href="tel:89765432100")
+                        .contact-item__icon 
+                            svg(width='32' height='32' viewBox='0 0 32 32')
+                                use(xlink:href="#phone-link")
+                        .contact-item__info 8 976 543 21 00
+                li.contacts-list__item
+                    .contact-item.contact-item_address 
+                        .contact-item__icon 
+                            svg(width='32' height='32' viewBox='0 0 32 32')
+                                use(xlink:href="#navigation")
+                        .contact-item__info 
+                            span Пн-Сб: с 8:00 до 20:00
+                            span Казань, ул. Баумана,&nbsp;1
+                li.contacts-list__item
+                    a.contact-item(href="mailto:info@sianhelth.com")
+                        .contact-item__icon 
+                            svg(width='32' height='32' viewBox='0 0 32 32')
+                                use(xlink:href="#mail")
+                        .contact-item__info info@sianhelth.com
+                li.contacts-list__item
+                    .contact-item
+                        .contact-item__icon 
+                            svg(width='32' height='32' viewBox='0 0 32 32')
+                                use(xlink:href="#favorities")
+                        ul.contact-item__socials
+                            li.contact-item__socials-item
+                                a.contact-item__socials-link
+                                    svg(width='32' height='32' viewBox='0 0 24 24')
+                                        use(xlink:href="#telegram")
+                            li.contact-item__socials-item
+                                a.contact-item__socials-link
+                                    svg(width='32' height='32' viewBox='0 0 32 32')
+                                        use(xlink:href="#whatsapp")
+                            li.contact-item__socials-item
+                                a.contact-item__socials-link
+                                    svg(width='32' height='32' viewBox='0 0 24 24')
+                                        use(xlink:href="#youtube")
+                            li.contact-item__socials-item
+                                a.contact-item__socials-link
+                                    svg(width='32' height='32' viewBox='0 0 24 24')
+                                        use(xlink:href="#vk")
+    section.contact-us-section 
+        .container
+            .contact-us-section__body 
+                .contact-us-section__form-block.form-block
+                    .form-block__header 
+                        h4.form-block__title 
+                            | Ответим на все ваши вопросы, оставьте заявку и мы свяжемся с вами
+                        p.form-block__subtitle
+                            | Комфорт и безопасность наших пациентов всегда являются нашим приоритетом при работе с нами. 
+                    .form-block__body 
+                        .form-block__page.form-block__page_one 
+                            form.form-block__form.form(action="#" name="order-call") 
+                                .form__control
+                                    input.form__input.form__input_required(type="text" id="name" name="name")
+                                    label.form__label(for="name") Ваше имя
+                                .form__control
+                                    input.form__input.form__input_required(type="tel" id="phone" name="phone" autocomplete="off")
+                                    label.form__label(for="phone") Ваш телефон
+                                .form__control 
+                                    textarea.form__input.form__textarea(id="comments" name="comments")
+                                    label.form__label(for="comments") Ваше сообщение
+                                button.form__submit(type="submit")
+                                    span Получить консультацию
+                                    .spinner
+                                .form__file
+                                    .form__file-field
+                                        input.form__file-input(type="file" id="file" accept=".pdf, .doc, .docx")
+                                        label.form__file-label(for="file") 
+                                            svg(width='24' height='24' viewBox='0 0 24 24')
+                                                use(xlink:href="#attachment")
+                                            span прикрепить файл
+                                    .form__file-doc
+                                        span
+                                        button(type="button")
+                                .form__agreement 
+                                    | Нажимая кнопку «получить консультацию», вы даёте согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности
+                        .form-block__page.form-block__page_two
+                            .form-block__thanks Спасибо, ваша заявка была получена  
+                .contact-us-section__map
+                    #map
+block scripts 
+    script(src="js/libs/swiper-bundle.min.js")
+    script(src='https://api-maps.yandex.ru/2.1/?apikey=4f70d3b1-f6e2-4ee2-bf65-83f325f91da4&load=package.standard&lang=en-UA' type='text/javascript')
+    script(src="js/app.min.js") 

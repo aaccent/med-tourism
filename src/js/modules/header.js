@@ -63,7 +63,6 @@ function openPopup(popup = undefined) {
 
 function validateForm(form) {    
     const reqFiedls = form.querySelectorAll("[class$='__input_required']")
-    // const emailField = form.querySelector("input[type='email']")
 
     function changeContentPage(form) {
         const formBlockEl = form.closest(".form-block__body");
@@ -99,12 +98,13 @@ function validateForm(form) {
         setTimeout(() => {
             changeContentPage(form)
             resetForm(form)
-        }, 10500)
+        }, 1000)
     }
 }
 
 function resetForm(form) {
     form.reset();
+    form.classList.remove("form_sending")
     form.querySelectorAll(".form__control").forEach(controlEl => controlEl.className = "form__control")
 }
 
@@ -119,6 +119,19 @@ for (let i = 0; i < document.forms.length; i++) {
         console.log("form")
     })
 }
+
+if (document.querySelector(".form__file-input")) {
+    document.querySelector(".form__file-input").addEventListener("change", e => {
+        const parentEl = e.target.closest(".form__file");
+        parentEl.querySelector(".form__file-doc span").innerHTML = e.target.files[0].name
+        parentEl.classList.add("form__file_attached")
+        parentEl.querySelector(".form__file-doc button").addEventListener("click", () => {
+            e.target.value = "";
+            parentEl.classList.remove("form__file_attached")
+        }, { once: true })
+    })
+}
+
 
 document.querySelector(".popup__close").addEventListener("click", e => closePopup(popupEl))
 popupEl.addEventListener("click", e => {
@@ -213,8 +226,8 @@ let tabMediaQuery = window.matchMedia("(max-width: 992px)")
 
 tabMediaQuery.addEventListener("change", e => {
     if (!e.matches) {
-        if (burgerEl.classList.contains("header__burger_open")) {
-            burgerEl.classList.remove("header__burger_open");
+        if (burgerMenuEl.querySelector(".header___burger").classList.contains("header__burger_open")) {
+            burgerMenuEl.querySelector(".header___burger").classList.remove("header__burger_open");
             menuEl.classList.remove("header__menu_open");
             document.querySelectorAll(".header__menu-item_open").forEach(menuItemEl => menuItemEl.classList.remove("header__menu-item_open"))
         }

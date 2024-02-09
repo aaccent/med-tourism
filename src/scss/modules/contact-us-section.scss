@@ -14,6 +14,17 @@
         left: calc(-436 / 1920 * 100%);
         z-index: 0;
     }
+    &:after {
+        background-image: url("../images/contact-us_line.svg");
+        background-position: left bottom;
+        background-size: cover;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0.9375rem;
+    }
     &__form-block {
         .form-block__header {
             color: $beige;
@@ -121,7 +132,7 @@
         width: 100%;
         &:focus {
             & + label {
-                transform: translate(0, - 2.4375rem) scale(0.75);
+                transform: translate(0, -2.4375rem) scale(0.75);
             }
         }
         .contact-us-section &:disabled {
@@ -132,6 +143,9 @@
                 color: $disabled-color;
             }
         }
+    }
+    &__textarea {
+        resize: none;
     }
     &__error-text {
         display: none;
@@ -164,6 +178,73 @@
             animation: spin 1.5s linear infinite;
         }
     }
+    &__file {
+        align-self: flex-start;
+        &_attached &-field {
+            display: none;
+        }
+        &_attached &-doc {
+            display: flex;
+        }
+    }
+    &__file-input {
+        appearance: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+    }
+    &__file-label {
+        color: $beige;
+        cursor: pointer;
+        font-size: 1.125rem;
+        display: flex;
+        gap: 0.625rem;
+        text-transform: uppercase;
+        span {
+            font-size: 1.125rem;
+        }
+        svg {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+    &__file-doc {
+        color: $beige;
+        cursor: auto;
+        display: none;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 0.625rem;
+        text-transform: uppercase;
+        span {
+            font-size: 1.125rem;
+        }
+        button {
+            cursor: pointer;
+            position: relative;
+            width: 1.5rem;
+            height: 1.5rem;
+            &:before, &:after {
+                background-color: $beige;
+                border-radius: 100%;
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 75%;
+                height: 1px;
+                transform-origin: center center;
+            }
+            &:before {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            &:after {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
     &__agreement {
         color: $beige;
         flex-basis: 100%;
@@ -183,8 +264,6 @@
             }
         }
     }
-    &_sent {
-    }
     @include gap {
         &__input, &__submit {
             padding: 1.5rem 2rem;
@@ -193,20 +272,38 @@
             top: 1.5rem;
             left: 2rem;
         }
+        &__input {
+            &:focus {
+                & + label {
+                    transform: translate(0, -2.0625rem) scale(0.75);
+                }
+            }
+        }
     }
     @include phone {
         &__input, &__submit {
             padding: 1rem 1.5rem;
         }
-        &__input, &__label, &__submit {
-            font-size: 1.125rem;
-        }
         &__label {
             top: 1rem;
             left: 1.5rem;
         }
+        &__input {
+            &:focus {
+                & + label {
+                    transform: translate(0, -1.5625rem) scale(0.75);
+                }
+            }
+        }
         &__agreement {
             font-size: 0.75rem;
+        }
+        &__file-label svg {
+            width: 1.125rem;
+            height: 1.125rem;
+        }
+        &__file-label, &__file-doc span {
+            font-size: 0.875rem;
         }
     }
 }

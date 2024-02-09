@@ -1,59 +1,30 @@
-section.contact-us-section 
-    .container
-        .contact-us-section__body 
-            .contact-us-section__form-block.form-block
-                .form-block__header 
-                    h4.form-block__title 
-                        | Ответим на все ваши вопросы, оставьте заявку и мы свяжемся с вами
-                    p.form-block__subtitle
-                        | Комфорт и безопасность наших пациентов всегда являются нашим приоритетом при работе с нами. 
-                .form-block__body 
-                    .form-block__page.form-block__page_one 
-                        form.form-block__form.form(action="#" name="order-call") 
-                            .form__control
-                                input.form__input.form__input_required(type="text" id="name" name="name")
-                                label.form__label(for="name") Ваше имя
-                            .form__control
-                                input.form__input.form__input_required(type="tel" id="phone" name="phone" autocomplete="off")
-                                label.form__label(for="phone") Ваш телефон
-                            button.form__submit(type="submit")
-                                span Получить консультацию
-                                .spinner
-                            .form__agreement 
-                                | Нажимая кнопку «получить консультацию», вы даёте согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности
-                    .form-block__page.form-block__page_two
-                        .form-block__thanks Спасибо, ваша заявка была получена  
-                        
-//- .map-section
-//-     #map
-
 footer.footer 
     .footer__container.container
         .footer__top 
             .footer__col.footer__col_main.footer-col 
-                .footer__logo.logo
+                a.footer__logo.logo(href="/")
                     img(src="./images/logo.png")
                 .footer__social-media
                     div Следите за нами
                     ul.footer__social-list 
                         li.footer__social-item 
-                            a.footer__social-link(href="#")
+                            a.footer__social-link(href="#" target="_blank")
                                 svg(width='24' height='24' viewBox='0 0 24 24')
                                     use(xlink:href="#telegram")
                         li.footer__social-item 
-                            a.footer__social-link(href="#")
+                            a.footer__social-link(href="#" target="_blank")
                                 svg(width='24' height='24' viewBox='0 0 24 24')
                                     use(xlink:href="#instagram")
                         li.footer__social-item 
-                            a.footer__social-link(href="#")
+                            a.footer__social-link(href="#" target="_blank")
                                 svg(width='24' height='24' viewBox='0 0 24 24')
                                     use(xlink:href="#youtube")
                         li.footer__social-item 
-                            a.footer__social-link(href="#")
+                            a.footer__social-link(href="#" target="_blank")
                                 svg(width='24' height='24' viewBox='0 0 24 24')
                                     use(xlink:href="#vk")
                         li.footer__social-item 
-                            a.footer__social-link(href="#")
+                            a.footer__social-link(href="#" target="_blank")
                                 svg(width='24' height='24' viewBox='0 0 24 24')
                                     use(xlink:href="#facebook")
             .footer__col.footer-col 
@@ -63,11 +34,11 @@ footer.footer
                         li.footer-col__menu-item
                             a.footer-col__menu-link(href="#") Услуги
                         li.footer-col__menu-item
-                            a.footer-col__menu-link(href="#") Клиники
+                            a.footer-col__menu-link(href="clinics-page.html") Клиники
                         li.footer-col__menu-item
-                            a.footer-col__menu-link(href="#") О компании
+                            a.footer-col__menu-link(href="about-page.html") О компании
                         li.footer-col__menu-item
-                            a.footer-col__menu-link(href="#") Контакты
+                            a.footer-col__menu-link(href="contacts-page.html") Контакты
                 .footer-col__menu
                     .footer-col__menu-title Контакты
                     ul.footer__contacts.footer-col__menu-list 

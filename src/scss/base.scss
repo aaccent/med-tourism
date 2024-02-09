@@ -1,5 +1,10 @@
 :root {
-
+    --init-width: 1920;
+    --init-width_units: calc(var(--init-width) * 1px);
+    @media screen and (min-width: 1920px) {
+        --screen-diff: calc((100vw - var(--init-width_units))/var(--init-width));
+        --font-size: calc(16px + 16 * var(--screen-diff));
+    }
 }
 
 *, *:before, *:after {
@@ -7,6 +12,11 @@
     margin: 0;
     padding: 0
 }
+
+html {
+    font-size: var(--font-size);
+}
+
 
 body {
     background-color: $background-color;
@@ -36,7 +46,7 @@ button {
     font-family: inherit;
 }
 
-input {
+input, textarea {
     background-color: transparent;
     border: none;
     outline: none;
@@ -47,7 +57,8 @@ input {
     padding: 0 1.875rem;
     width: 100%;
     @include phone {
-        padding: 0 1rem
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
     }
 }
 
@@ -71,5 +82,15 @@ input {
             padding-top: 3.125rem;
             padding-bottom: 3.125rem;
         }
+    }
+}
+
+.page {
+    padding: 8.75rem 0 0;
+    @include tablet {
+        padding-top: 7.25rem 
+    }
+    @include phone {
+        padding-top: 4.3125rem;
     }
 }

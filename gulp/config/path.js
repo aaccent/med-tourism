@@ -20,7 +20,7 @@ const path = {
         files: `${srcFolder}/files/**/*.*`,
         html: `${srcFolder}/*.html`,
         pug: `${srcFolder}/pug/*.pug`,
-        scss: `${srcFolder}/scss/style.scss`,
+        scss: `${srcFolder}/scss/*.scss`,
         css_libs: `${srcFolder}/scss/libs/*.css`,
         js: `${srcFolder}/js/app.js`,
         js_libs: `${srcFolder}/js/libs/*.js`,

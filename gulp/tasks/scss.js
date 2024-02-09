@@ -11,7 +11,7 @@ import groupCssMediaQueries from "gulp-group-css-media-queries"
 const sass = gulpSass(dartSass)
 
 const scss = () => {
-    return app.gulp.src([app.path.src.scss, `!./src/scss/base.scss`], { sourcemaps: true})
+    return app.gulp.src([app.path.src.scss, `!./src/scss/base.scss`, `!./src/scss/page.scss`], { sourcemaps: true})
         .pipe(sass({
             outputStyle: "expanded"
         }))

@@ -76,6 +76,8 @@
         }
         svg {
             vertical-align: top;
+            width: 1.5rem;
+            height: 1.5rem;
         }
     }
     &__copyrights, &__policy {
@@ -93,7 +95,18 @@
         padding: 1.875rem 2.5rem;
     }
     &__button-icon {
-        vertical-align: top;
+        color: $beige;
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;           
+            vertical-align: top;
+        }
+
+    }
+    &__button-label {
+        color: $beige;
+        font-size: 1.125rem;
+        font-weight: 500;
     }
     &__aacent {
         display: flex;

@@ -1,99 +1,3 @@
-.swiper-buttons {
-    display: flex;
-    gap: 2.25rem;
-    @include gap {
-        justify-content: center;
-    }
-    @include phone {
-        gap: 1.25rem;
-    }
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-    border: 1px solid $black;
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    color: $black;
-    cursor: pointer;
-    font-size: 1.125rem;
-    flex: 1 0 auto;
-    margin: 0;
-    padding: 1.875rem 2.5rem;
-    position: static;
-    width: auto;
-    height: auto;
-    text-transform: uppercase;
-    &:after {
-        content: none
-    }
-    svg {
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-    @include tablet {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-    }
-    @include phone {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        span {
-            font-size: 0.875rem;
-        }
-        svg {
-            width: 1.125rem;
-            height: 1.125rem;
-        }
-    }
-}
-
-.swiper-button-prev {
-    border-radius: 3.75rem 1.25rem;
-    border-radius: 6.25rem 3.125rem;
-    svg {
-        transform: rotate(-180deg);
-    }
-}
-
-.swiper-button-next {
-    border-radius: 1.25rem 3.75rem;
-    border-radius: 3.125rem 6.25rem;
-
-}
-
-.swiper {
-    margin-left:  -1.875rem;
-    margin-right: -1.875rem;
-    padding-left: -1.875rem;
-    padding-right: -1.875rem;
-    @include phone {
-        margin-left:  -1rem;
-        margin-right: -1rem;
-        padding-left: -1rem;
-        padding-right: -1rem;
-    }
-}
-
-// .swiper-scrollbar {
-//     // margin-left: auto !important;
-//     // margin-right: auto !important;
-//     // width: calc(100% - 60px) !important;
-// }
-
-.reviews-section .swiper-scrollbar,
-.clients-section .swiper-scrollbar {
-    background-color: $background-color;
-    margin: 1.25rem 0 0;
-    position: static;
-    height: 0.9375rem;
-    width: auto;
-    .swiper-scrollbar-drag {
-        background-color: $grey;
-    }
-}
-
 .reviews-section {
     &__header {
         display: flex;
@@ -101,13 +5,8 @@
         align-items: center;
         gap: 2.5rem;
     }
-    &__swiper-buttons {
-        &_mobile {
-            display: none;
-        }
-    }
     &__body {
-        margin: 6.35rem 0 0;
+        margin-top: 6.35rem;
         @include adaptive_value(margin-top, 20, 100, 576, 1920);
     }
     &__review {
@@ -118,11 +17,6 @@
     }
     .swiper-slide {
         height: auto;
-    }
-    @include gap {
-        &__swiper-buttons {
-            margin: 1.875rem 0 0;
-        }
     }
 }
 
@@ -150,8 +44,8 @@
         align-items: center;
         gap: 0.625rem;
         svg {
-            width: 24px;
-            height: 24px;
+            width: 1.5rem;
+            height: 1.5rem;
             opacity: 0.5;
         }
         span {

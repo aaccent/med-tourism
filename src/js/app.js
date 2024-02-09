@@ -125,15 +125,7 @@ const inputControlClass = "form__control"
 
 for (let i = 0; i < inputEls.length; i++) {
     let inputControlEl = inputEls[i].closest("." + inputControlClass)
-    // сброс инпута
-    // inputControlEl.querySelector("button").addEventListener("click", e => {
-    //     if (e.target.closest("form").classList.contains("contact-us-form_sending")) {
-    //         return 
-    //     }
-    //     inputControlEl.className = inputControlClass
-    //     inputEls[i].value = "";
-    //     inputEls[i].focus()
-    // })
+
     // ввод
     inputEls[i].addEventListener("input", e => {
         const inputEl = e.target;
@@ -156,14 +148,6 @@ for (let i = 0; i < inputEls.length; i++) {
         focusedControl && focusedControl.classList.remove(inputControlClass + "_focused")
         inputControlEl.classList.add("form__conrol_focused")
     })
-    // if (inputEls[i].getAttribute("name") === "email") {
-    //     inputEls[i].addEventListener("blur", e => {
-    //         const target = e.target
-    //         if (target.value.trim() !== "" && !validateEmail(target.value)) {
-    //             target.closest(".contact-us-form__control").classList.add("contact-us-form__control_error");
-    //         }
-    //     })
-    // }
 }
 
 document.querySelectorAll("input[name='phone']").forEach(inputElement => {
@@ -248,4 +232,4 @@ function init() {
     }
 }
 
-// ymaps.ready(init);
+ymaps.ready(init);

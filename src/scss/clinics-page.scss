@@ -1,0 +1,100 @@
+@import "base/_vars.scss";
+@import "base/_fonts.scss";
+@import "mixins/breakpoints.scss";
+@import "mixins/fonts.scss";
+@import "mixins/media.scss";
+@import "base.scss";
+
+@import "components/button.scss";
+@import "components/logo.scss";
+@import "components/popup.scss";
+@import "components/breadcrumbs.scss";
+@import "components/card.scss";
+
+@import "page.scss";
+
+@import "modules/header.scss";
+@import "modules/advantage-section.scss";
+@import "modules/contact-us-section.scss";
+@import "modules/footer.scss";
+
+.clinic {
+    display: flex;
+    gap: 1.25rem;
+    padding: 6.35rem 0;
+    &__content, &__img {
+        flex-basis: calc(50% - 0.625rem);
+    }
+    &__content {
+        @include adaptive_value(--padding-x, 0, 90, 576, 1920);
+        @include adaptive_value(--padding-y, 0, 56, 576, 1920);
+        padding: var(--padding-y, 3.5rem) var(--padding-x, 5.625rem);
+    }
+    &__title {
+        color: #1C2527;
+        font-size: 3.25rem;
+        @include adaptive_value(font-size, 24, 42, 576, 1280);
+        font-weight: 400;
+        line-height: 1.48;
+        margin: 0 0 1.25rem;
+    }
+    &__desc {
+        p {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.5;
+            &:not(:last-child) {
+                margin: 0 0 3.125rem;
+            }
+        }
+    }
+    &__img {
+        border-radius: 1.875rem;
+        align-self: center;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            vertical-align: top;
+        }
+    }
+    &_reverse {
+        flex-direction: row-reverse;
+    }
+    @include desktop {
+        flex-direction: column;
+        &__img {
+            max-height: 40.625rem;
+        }
+    }
+    @include tablet {
+        padding-top: 4.375rem;
+        padding-bottom: 4.375rem;
+        &__desc p {
+            font-size: 1.25rem;
+        }
+    }
+    @include gap {
+        &__desc {
+            p {
+                font-size: 1.125rem;
+                &:not(:last-child) {
+                    margin-bottom: 1.875rem;
+                }
+            }
+        }
+    }
+    @include phone {
+        padding-top: 3.125rem;
+        padding-bottom: 3.125rem;
+        &__title {
+            margin: 0 0 0.625rem;
+        }
+        &__desc {
+            p {
+                font-size: 0.875rem;
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 .hero-section {
-    margin: 8.75rem 0 0;
+    margin: 1.875rem 0 0;
     &__container {
     }
     &__inner-wrapper {
@@ -59,6 +59,10 @@
         @include adaptive_value(--padding-x, 24, 40, 576, 1280);
         @include adaptive_value(--padding-y, 16, 30, 576, 1280);
         padding: var(--padding-y, 1.875rem) var(--padding-x, 2.5rem);
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
     &__img {
         flex-basis: calc(630 / 1860 * 100%);
@@ -102,7 +106,6 @@
         }
     }
     @include phone {
-        margin-top: 5.9375rem;
         &__content  {
             margin: 0 auto;
             padding-left: 0;

@@ -1,0 +1,37 @@
+extends templates/layout
+
+mixin clinic-item(reverse)
+    article.clinic(class=reverse && "clinic_reverse")
+        .clinic__img 
+            img(src="./images/clinic.png", alt="")
+        .clinic__content 
+            h3.clinic__title Клиника на баумана
+            .clinic__desc 
+                p
+                    | Наша миссия — предоставить вам медицинские услуги мирового уровня для улучшения и качества жизни наших пациентов, 
+                    | а также максимизировать удовлетворенность наших пациентов, предоставляя им безопасные, высококачественные и персонализированные варианты лечения.
+                p
+                    | Наша миссия — предоставить вам медицинские услуги мирового уровня для улучшения и качества жизни наших пациентов, 
+                    | а также максимизировать удовлетворенность наших пациентов, предоставляя им безопасные, высококачественные и персонализированные варианты лечения.
+block head
+    title Клиники
+    link(rel="stylesheet", href="css/clinics-page.min.css")
+block content 
+    .container
+        nav.page__breadcrumbs.breadcrumbs 
+            ol.breadcrumbs__list 
+                li.breadcrumbs__item 
+                    a.breadcrumbs__link(href="/") Главная
+                li.breadcrumbs__item 
+                    a.breadcrumbs__link(href="#") Клиники   
+        .page__block
+            h1.page__title-h1 Клиники
+            - for (var i = 0; i < 4; i++)
+                - var reverse = i % 2 ? "_reversed" : ""
+                +clinic-item(reverse)
+    include ./includes/page-blocks/advantage.pug
+    include ./includes/page-blocks/contact-us.pug
+block scripts 
+    script(src="js/libs/swiper-bundle.min.js")
+    script(src='https://api-maps.yandex.ru/2.1/?apikey=4f70d3b1-f6e2-4ee2-bf65-83f325f91da4&load=package.standard&lang=en-UA' type='text/javascript')
+    script(src="js/app.min.js") 

@@ -90,6 +90,9 @@
         }
     }
     &__desc {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1.5;
         text-align: center;
     }
     @include tablet {
@@ -101,11 +104,18 @@
         }
     }
     @include gap {
+        &__desc {
+            font-size: 1.25rem;;
+        }
         &__number {
             font-size: 2.25rem;
         }
     }
     @include phone {
         gap: 0.875rem;
+        &__desc {
+            font-size: 1.125rem;;
+        }
     }
+
 }

@@ -1,6 +1,5 @@
 @import "base/_vars.scss";
 @import "base/_fonts.scss";
-@import "base/_icons.scss";
 @import "mixins/breakpoints.scss";
 @import "mixins/fonts.scss";
 @import "mixins/media.scss";
@@ -8,6 +7,7 @@
 
 @import "components/button.scss";
 @import "components/logo.scss";
+@import "components/swiper.scss";
 @import "components/popup.scss";
 
 @import "modules/header.scss";
