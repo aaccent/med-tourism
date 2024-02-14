@@ -111,6 +111,13 @@ input,textarea {
     text-transform: uppercase
 }
 
+.button_outlined {
+    border: 1px solid rgba(17,34,51,.5);
+    -webkit-transition: border-color .2s ease 0s;
+    -o-transition: border-color .2s ease 0s;
+    transition: border-color .2s ease 0s
+}
+
 .logo img {
     width: auto;
     height: 6.25rem;
@@ -125,7 +132,7 @@ input,textarea {
 }
 
 .swiper-button-next,.swiper-button-prev {
-    border: 1px solid #123;
+    border: 1px solid rgba(17,34,51,.5);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -144,7 +151,10 @@ input,textarea {
     position: static;
     width: auto;
     height: auto;
-    text-transform: uppercase
+    text-transform: uppercase;
+    -webkit-transition: border-color .2s ease 0s;
+    -o-transition: border-color .2s ease 0s;
+    transition: border-color .2s ease 0s
 }
 
 .swiper-button-next:after,.swiper-button-prev:after {
@@ -174,6 +184,7 @@ input,textarea {
 
 .clients-section .swiper-scrollbar,.reviews-section .swiper-scrollbar {
     background-color: #fafafa;
+    border: 1px solid rgba(17,34,51,.2);
     margin: 1.25rem 0 0;
     position: static;
     height: .9375rem;
@@ -207,7 +218,7 @@ input,textarea {
     -webkit-transition: all .3s ease 0s;
     -o-transition: all .3s ease 0s;
     transition: all .3s ease 0s;
-    z-index: 10
+    z-index: 20
 }
 
 .popup__container {
@@ -427,7 +438,10 @@ input,textarea {
 .header__menu-item {
     border: 1px solid rgba(17,34,51,.2);
     border-radius: 6.25rem;
-    position: relative
+    position: relative;
+    -webkit-transition: border-color .2s ease 0s;
+    -o-transition: border-color .2s ease 0s;
+    transition: border-color .2s ease 0s
 }
 
 .header__menu-link {
@@ -453,7 +467,8 @@ input,textarea {
 }
 
 .header__menu-link svg {
-    margin: 2px
+    width: 1.5rem;
+    height: 1.5rem
 }
 
 .header__actions {
@@ -488,6 +503,7 @@ input,textarea {
 }
 
 .header__call-desc {
+    cursor: pointer;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -636,10 +652,23 @@ input,textarea {
     padding-top: 1.25rem
 }
 
+.submenu .swiper {
+    min-width: 0;
+    min-height: 0
+}
+
 .submenu__wrapper {
     background-color: #fff;
     border-radius: 1.875rem;
-    padding: 2.5rem 1.25rem 0 2.5rem
+    padding: 2.5rem 1.25rem 0 2.5rem;
+    max-height: 676px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
 }
 
 .submenu__title {
@@ -647,12 +676,6 @@ input,textarea {
     font-weight: 500;
     margin: 0 0 1.25rem;
     text-transform: uppercase
-}
-
-.submenu__categories {
-    padding-right: 2.5rem;
-    max-height: 35.75rem;
-    overflow: auto
 }
 
 .submenu__category:not(:last-child) {
@@ -691,7 +714,10 @@ input,textarea {
     font-family: Roboto,sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
-    opacity: .6
+    opacity: .6;
+    -webkit-transition: opacity .2s ease 0s;
+    -o-transition: opacity .2s ease 0s;
+    transition: opacity .2s ease 0s
 }
 
 .hero-section {
@@ -751,7 +777,29 @@ input,textarea {
     gap: 2rem;
     color: #fffce6;
     font-size: 1.125rem;
-    padding: var(--padding-y,1.875rem) var(--padding-x,2.5rem)
+    padding: var(--padding-y,1.875rem) var(--padding-x,2.5rem);
+    position: relative;
+    overflow: hidden
+}
+
+.hero-section__button span,.hero-section__button svg {
+    position: relative;
+    z-index: 1
+}
+
+.hero-section__button:before {
+    background-color: #fff;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: background-color .2s ease 0s;
+    -o-transition: background-color .2s ease 0s;
+    transition: background-color .2s ease 0s;
+    z-index: 0
 }
 
 .hero-section__button svg {
@@ -810,6 +858,7 @@ input,textarea {
 .service-item__img {
     border-radius: 1.875rem;
     padding-top: 96.6666666667%;
+    cursor: pointer;
     position: relative;
     width: 100%;
     height: 0;
@@ -823,7 +872,12 @@ input,textarea {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
-    object-fit: cover
+    object-fit: cover;
+    -webkit-transition: -webkit-transform .3s linear 0s;
+    transition: -webkit-transform .3s linear 0s;
+    -o-transition: transform .3s linear 0s;
+    transition: transform .3s linear 0s;
+    transition: transform .3s linear 0s,-webkit-transform .3s linear 0s
 }
 
 .service-item__name {
@@ -918,14 +972,12 @@ input,textarea {
 }
 
 .about-section__more svg {
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
     width: 1.5rem;
     height: 1.5rem
 }
 
 .about-section__img {
+    pointer-events: none;
     position: absolute;
     bottom: 0;
     width: 668px;
@@ -1322,6 +1374,10 @@ input,textarea {
     transform: translate(-50%,-50%)
 }
 
+.reviews-section .swipe-icon .clients-section .swipe-icon {
+    display: none
+}
+
 .faq-section {
     margin: 0 0 -1.875rem
 }
@@ -1343,10 +1399,10 @@ input,textarea {
     border-radius: 2.5rem;
     -ms-flex-item-align: start;
     align-self: flex-start;
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
+    -ms-flex-preferred-size: 61.5625rem;
+    flex-basis: 61.5625rem;
     margin: 0 0 6.35rem;
-    padding: 0 1.1875rem;
+    padding: 0 1.875rem;
     min-width: 800px
 }
 
@@ -1388,7 +1444,8 @@ input,textarea {
 }
 
 .faq-section__img img {
-    width: 85.3409090909%;
+    margin-left: 4.0625rem;
+    width: 82.9834254144%;
     height: auto;
     vertical-align: top
 }
@@ -1398,6 +1455,7 @@ input,textarea {
 }
 
 .faq-item__header {
+    cursor: pointer;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1407,8 +1465,7 @@ input,textarea {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    gap: 1.25rem;
-    cursor: pointer
+    gap: 1.25rem
 }
 
 .faq-item__title {
@@ -1419,16 +1476,17 @@ input,textarea {
 }
 
 .faq-item__button {
+    cursor: pointer;
     -ms-flex-negative: 0;
     flex-shrink: 0;
     position: relative;
-    padding: .125rem;
+    padding: .25rem;
     width: 1.5rem;
     height: 1.5rem;
     opacity: .7;
-    -webkit-transform: opacity .15s ease 0s;
-    -ms-transform: opacity .15s ease 0s;
-    transform: opacity .15s ease 0s
+    -webkit-transition: opacity .15s ease 0s;
+    -o-transition: opacity .15s ease 0s;
+    transition: opacity .15s ease 0s
 }
 
 .faq-item__button:after,.faq-item__button:before {
@@ -1438,8 +1496,8 @@ input,textarea {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: calc(100% - .125rem);
-    height: .125rem;
+    width: calc(100% - .5rem);
+    height: .09375rem;
     -webkit-transition: -webkit-transform .3s ease 0s;
     transition: -webkit-transform .3s ease 0s;
     -o-transition: transform .3s ease 0s;
@@ -1612,6 +1670,10 @@ input,textarea {
     text-align: center
 }
 
+.contact-us-section__form-block .form-block__title {
+    font-size: 3.25rem
+}
+
 .contact-us-section__body {
     position: relative;
     margin-left: auto;
@@ -1743,7 +1805,8 @@ input,textarea {
 
 .form__file {
     -ms-flex-item-align: start;
-    align-self: flex-start
+    align-self: flex-start;
+    max-width: 100%
 }
 
 .form__file_attached .form__file-field {
@@ -1774,6 +1837,9 @@ input,textarea {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     gap: .625rem;
     text-transform: uppercase
 }
@@ -1783,8 +1849,8 @@ input,textarea {
 }
 
 .form__file-label svg {
-    width: 2.5rem;
-    height: 2.5rem
+    width: 1.5rem;
+    height: 1.5rem
 }
 
 .form__file-doc {
@@ -1803,7 +1869,11 @@ input,textarea {
 }
 
 .form__file-doc span {
-    font-size: 1.125rem
+    font-size: 1.125rem;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis
 }
 
 .form__file-doc button {
@@ -1846,6 +1916,7 @@ input,textarea {
     font-size: 1rem;
     line-height: 1.5;
     margin: 2.25rem 0 0;
+    opacity: .5;
     text-align: center
 }
 
@@ -1886,7 +1957,8 @@ input,textarea {
 
 .map-section {
     width: 100%;
-    height: 50rem
+    height: 50rem;
+    overflow: hidden
 }
 
 .map-section #map {
@@ -1924,6 +1996,20 @@ input,textarea {
     display: -ms-flexbox;
     display: flex;
     row-gap: 2.5rem
+}
+
+.footer__top .footer__col_main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.25rem;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
 }
 
 .footer__col_main {
@@ -1976,9 +2062,9 @@ input,textarea {
     border-radius: 50%;
     display: block;
     padding: .4375rem;
-    -webkit-transition: border-color .15s ease 0s;
-    -o-transition: border-color .15s ease 0s;
-    transition: border-color .15s ease 0s
+    -webkit-transition: border-color .2s ease 0s;
+    -o-transition: border-color .2s ease 0s;
+    transition: border-color .2s ease 0s
 }
 
 .footer__social-link svg {
@@ -2152,6 +2238,10 @@ input,textarea {
         right: 0
     }
 
+    .faq-section__img img {
+        margin-left: 0
+    }
+
     .article-section__inner-wrapper {
         gap: 30px
     }
@@ -2226,11 +2316,19 @@ input,textarea {
     }
 
     .faq-section__list {
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
         margin-bottom: 0;
         min-width: 0
     }
 
     .faq-section__img {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
         -ms-flex-item-align: stretch;
         -ms-grid-row-align: stretch;
         align-self: stretch;
@@ -2242,6 +2340,8 @@ input,textarea {
     }
 
     .faq-section__img img {
+        margin-left: 0;
+        width: auto;
         height: 100%;
         -o-object-fit: contain;
         object-fit: contain
@@ -2301,9 +2401,9 @@ input,textarea {
         width: 100%;
         height: calc(100% - 7.25rem);
         overflow: auto;
-        -webkit-transform: translate(0,-100vh);
-        -ms-transform: translate(0,-100vh);
-        transform: translate(0,-100vh);
+        -webkit-transform: translate(0,-100%);
+        -ms-transform: translate(0,-100%);
+        transform: translate(0,-100%);
         -webkit-transition: -webkit-transform .5s ease 0s;
         transition: -webkit-transform .5s ease 0s;
         -o-transition: transform .5s ease 0s;
@@ -2569,6 +2669,17 @@ input,textarea {
 
     .clients-section__body {
         margin-top: 2.5rem
+    }
+
+    .reviews-section .swipe-icon .clients-section .swipe-icon {
+        display: block;
+        -ms-flex-negative: 0;
+        flex-shrink: 0
+    }
+
+    .reviews-section .swipe-icon .clients-section .swipe-icon svg {
+        width: 1.5rem;
+        height: 1.5rem
     }
 
     .faq-section__img {
@@ -2996,9 +3107,19 @@ input,textarea {
         margin-top: 1.25rem
     }
 
+    .faq-section__list {
+        border-radius: 1.25rem;
+        padding-left: 0;
+        padding-right: 0
+    }
+
     .faq-section__img {
         margin-right: -1rem;
         margin-left: -1rem
+    }
+
+    .faq-item__header {
+        gap: .625rem
     }
 
     .faq-item__title {
@@ -3108,7 +3229,7 @@ input,textarea {
     }
 
     .about-section__more {
-        --padding-y: 17px
+        --padding-y: 16px
     }
 
     .about-section__more {
@@ -3153,6 +3274,10 @@ input,textarea {
 
     .article-section__title {
         font-size: 22px
+    }
+
+    .contact-us-section__form-block .form-block__title {
+        font-size: 24px
     }
 }
 
@@ -3214,6 +3339,10 @@ input,textarea {
     .reviews-section__body {
         margin-top: calc(20px + 80 * (100vw - 576px)/ (1920 - 576))
     }
+
+    .contact-us-section__form-block .form-block__title {
+        font-size: calc(24px + 28 * (100vw - 576px)/ (1920 - 576))
+    }
 }
 
 @media screen and (max-width:992px) and (min-width:576px) {
@@ -3230,7 +3359,7 @@ input,textarea {
     }
 
     .about-section__more {
-        --padding-y: calc(17px + 17 * (100vw - 576px) / (992 - 576))
+        --padding-y: calc(16px + 18 * (100vw - 576px) / (992 - 576))
     }
 
     .about-section__more {
@@ -3271,6 +3400,10 @@ input,textarea {
         right: calc(0px + -57 * (100vw - 1280px)/ (1920 - 1280))
     }
 
+    .faq-section__img img {
+        margin-left: calc(0px + 65 * (100vw - 1280px)/ (1920 - 1280))
+    }
+
     .article-section__inner-wrapper {
         gap: calc(30px + 170 * (100vw - 1280px)/ (1920 - 1280))
     }
@@ -3294,8 +3427,8 @@ input,textarea {
     }
 
     .header__menu-link svg {
-        width: 18px;
-        height: 18px
+        width: 1.125rem;
+        height: 1.125rem
     }
 
     .header__call-desc {
@@ -3394,8 +3527,30 @@ input,textarea {
 }
 
 @media screen and (any-hover:hover) {
-    .header__menu-link:hover {
+    .button:hover_outlinded {
         border-color: #123
+    }
+
+    .swiper-button-next:hover,.swiper-button-prev:hover {
+        border-color: #123
+    }
+
+    .header__menu-item:hover {
+        border-color: #123
+    }
+
+    .submenu-category__link:hover {
+        opacity: 1
+    }
+
+    .hero-section__button:hover:before {
+        opacity: .2
+    }
+
+    .service-item:hover img {
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05)
     }
 
     .about-section__more:hover {

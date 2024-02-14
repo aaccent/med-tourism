@@ -111,6 +111,13 @@ input,textarea {
     text-transform: uppercase
 }
 
+.button_outlined {
+    border: 1px solid rgba(17,34,51,.5);
+    -webkit-transition: border-color .2s ease 0s;
+    -o-transition: border-color .2s ease 0s;
+    transition: border-color .2s ease 0s
+}
+
 .logo img {
     width: auto;
     height: 6.25rem;
@@ -130,7 +137,7 @@ input,textarea {
     -webkit-transition: all .3s ease 0s;
     -o-transition: all .3s ease 0s;
     transition: all .3s ease 0s;
-    z-index: 10
+    z-index: 20
 }
 
 .popup__container {
@@ -339,45 +346,97 @@ input,textarea {
 }
 
 .page__breadcrumbs {
-    margin: 3.125rem 0 1.25rem
+    margin: 3.125rem 0 0
 }
 
-.page__block {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    gap: 1.25rem
-}
-
-.page__block:not(:last-child) {
-    margin: 0 0 3.125rem
-}
-
-.page__title-h1 {
+.page__title {
     font-size: 4.5rem;
     font-weight: 500;
+    margin: 1.25rem 0 0;
     text-transform: uppercase
 }
 
-.page__title-h2 {
+.page__content>h2,.page__content>h3,.page__content>h4 {
+    margin: 3.125rem 0 0
+}
+
+.page__content>h2 {
     font-size: 3.25rem;
     font-weight: 500
 }
 
-.page__title-h3 {
+.page__content>h3 {
     font-size: 2.625rem;
     font-weight: 600;
     line-height: 1.48
 }
 
-.page__title-h4 {
+.page__content>h4 {
     font-size: 2rem;
     font-weight: 700;
     line-height: 1.48
+}
+
+.page__content>ol,.page__content>p,.page__content>ul {
+    margin: 1.25rem 0 0
+}
+
+.page__content>p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5
+}
+
+.page__content>ol,.page__content>ul {
+    padding-left: 1.875rem;
+    max-width: 65rem
+}
+
+.page__content>ul>li {
+    list-style: disc
+}
+
+.page__content>ol>li {
+    list-style: decimal
+}
+
+.page__content>li {
+    color: #1c2527;
+    font-size: 1.25rem;
+    opacity: .8
+}
+
+.page__content>blockquote {
+    max-width: 66.5rem
+}
+
+.page__content>blockquote p {
+    background-color: rgba(76,212,176,.2);
+    border-radius: .375rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.48;
+    padding: .75rem 1.25rem;
+    position: relative
+}
+
+.page__content>blockquote p:before {
+    background-color: #4cd4b0;
+    border-radius: 2.5rem 0 0 2.5rem;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: .25rem;
+    height: 100%
+}
+
+.page__content>blockquote footer {
+    color: rgba(58,61,62,.5);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.48;
+    margin: .625rem 0 0
 }
 
 .page__text {
@@ -401,14 +460,11 @@ input,textarea {
 .page__img {
     border-radius: 1.25rem;
     position: relative;
+    margin: 3.125rem 0 0;
     padding-top: 39.4086021505%;
     height: 0;
     width: 74.7311827957%;
     overflow: hidden
-}
-
-.page__img:not(:last-child) {
-    margin: 0 0 2.5rem
 }
 
 .page__img img {
@@ -419,58 +475,6 @@ input,textarea {
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover
-}
-
-.page__list {
-    padding-left: 1.875rem;
-    max-width: 65rem
-}
-
-.page__list-item {
-    color: #1c2527;
-    font-size: 1.25rem;
-    opacity: .8
-}
-
-ul .page__list-item {
-    list-style: disc
-}
-
-ol .page__list-item {
-    list-style: decimal
-}
-
-.quote {
-    max-width: 66.5rem
-}
-
-.quote__text {
-    background-color: rgba(76,212,176,.2);
-    border-radius: .375rem;
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.48;
-    padding: .75rem 1.25rem;
-    position: relative
-}
-
-.quote__text:before {
-    background-color: #4cd4b0;
-    border-radius: 2.5rem 0 0 2.5rem;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: .25rem;
-    height: 100%
-}
-
-.quote__author {
-    color: rgba(58,61,62,.5);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.48;
-    margin: .625rem 0 0
 }
 
 .header {
@@ -522,7 +526,10 @@ ol .page__list-item {
 .header__menu-item {
     border: 1px solid rgba(17,34,51,.2);
     border-radius: 6.25rem;
-    position: relative
+    position: relative;
+    -webkit-transition: border-color .2s ease 0s;
+    -o-transition: border-color .2s ease 0s;
+    transition: border-color .2s ease 0s
 }
 
 .header__menu-link {
@@ -548,7 +555,8 @@ ol .page__list-item {
 }
 
 .header__menu-link svg {
-    margin: 2px
+    width: 1.5rem;
+    height: 1.5rem
 }
 
 .header__actions {
@@ -583,6 +591,7 @@ ol .page__list-item {
 }
 
 .header__call-desc {
+    cursor: pointer;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -731,10 +740,23 @@ ol .page__list-item {
     padding-top: 1.25rem
 }
 
+.submenu .swiper {
+    min-width: 0;
+    min-height: 0
+}
+
 .submenu__wrapper {
     background-color: #fff;
     border-radius: 1.875rem;
-    padding: 2.5rem 1.25rem 0 2.5rem
+    padding: 2.5rem 1.25rem 0 2.5rem;
+    max-height: 676px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
 }
 
 .submenu__title {
@@ -742,12 +764,6 @@ ol .page__list-item {
     font-weight: 500;
     margin: 0 0 1.25rem;
     text-transform: uppercase
-}
-
-.submenu__categories {
-    padding-right: 2.5rem;
-    max-height: 35.75rem;
-    overflow: auto
 }
 
 .submenu__category:not(:last-child) {
@@ -786,7 +802,10 @@ ol .page__list-item {
     font-family: Roboto,sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
-    opacity: .6
+    opacity: .6;
+    -webkit-transition: opacity .2s ease 0s;
+    -o-transition: opacity .2s ease 0s;
+    transition: opacity .2s ease 0s
 }
 
 .about-section {
@@ -875,14 +894,12 @@ ol .page__list-item {
 }
 
 .about-section__more svg {
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
     width: 1.5rem;
     height: 1.5rem
 }
 
 .about-section__img {
+    pointer-events: none;
     position: absolute;
     bottom: 0;
     width: 668px;
@@ -1106,6 +1123,10 @@ ol .page__list-item {
     text-align: center
 }
 
+.contact-us-section__form-block .form-block__title {
+    font-size: 3.25rem
+}
+
 .contact-us-section__body {
     position: relative;
     margin-left: auto;
@@ -1237,7 +1258,8 @@ ol .page__list-item {
 
 .form__file {
     -ms-flex-item-align: start;
-    align-self: flex-start
+    align-self: flex-start;
+    max-width: 100%
 }
 
 .form__file_attached .form__file-field {
@@ -1268,6 +1290,9 @@ ol .page__list-item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     gap: .625rem;
     text-transform: uppercase
 }
@@ -1277,8 +1302,8 @@ ol .page__list-item {
 }
 
 .form__file-label svg {
-    width: 2.5rem;
-    height: 2.5rem
+    width: 1.5rem;
+    height: 1.5rem
 }
 
 .form__file-doc {
@@ -1297,7 +1322,11 @@ ol .page__list-item {
 }
 
 .form__file-doc span {
-    font-size: 1.125rem
+    font-size: 1.125rem;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis
 }
 
 .form__file-doc button {
@@ -1340,6 +1369,7 @@ ol .page__list-item {
     font-size: 1rem;
     line-height: 1.5;
     margin: 2.25rem 0 0;
+    opacity: .5;
     text-align: center
 }
 
@@ -1380,7 +1410,8 @@ ol .page__list-item {
 
 .map-section {
     width: 100%;
-    height: 50rem
+    height: 50rem;
+    overflow: hidden
 }
 
 .map-section #map {
@@ -1418,6 +1449,20 @@ ol .page__list-item {
     display: -ms-flexbox;
     display: flex;
     row-gap: 2.5rem
+}
+
+.footer__top .footer__col_main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.25rem;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
 }
 
 .footer__col_main {
@@ -1470,9 +1515,9 @@ ol .page__list-item {
     border-radius: 50%;
     display: block;
     padding: .4375rem;
-    -webkit-transition: border-color .15s ease 0s;
-    -o-transition: border-color .15s ease 0s;
-    transition: border-color .15s ease 0s
+    -webkit-transition: border-color .2s ease 0s;
+    -o-transition: border-color .2s ease 0s;
+    transition: border-color .2s ease 0s
 }
 
 .footer__social-link svg {
@@ -1734,9 +1779,9 @@ ol .page__list-item {
         width: 100%;
         height: calc(100% - 7.25rem);
         overflow: auto;
-        -webkit-transform: translate(0,-100vh);
-        -ms-transform: translate(0,-100vh);
-        transform: translate(0,-100vh);
+        -webkit-transform: translate(0,-100%);
+        -ms-transform: translate(0,-100%);
+        transform: translate(0,-100%);
         -webkit-transition: -webkit-transform .5s ease 0s;
         transition: -webkit-transform .5s ease 0s;
         -o-transition: transform .5s ease 0s;
@@ -1994,11 +2039,11 @@ ol .page__list-item {
 }
 
 @media screen and (max-width:680px) {
-    .page__title-h4 {
+    .page__content>h4 {
         font-size: 1.125rem
     }
 
-    .page__list-item {
+    .page__content>li {
         font-size: 1rem
     }
 }
@@ -2060,16 +2105,20 @@ ol .page__list-item {
         margin-top: 1.875rem
     }
 
-    .page__block {
-        gap: .625rem
+    .page__title {
+        margin-top: .625rem
     }
 
-    .page__block:not(:last-child) {
-        margin-bottom: 1.1875rem
+    .page__content>h2,.page__content>h3,.page__content>h4 {
+        margin-top: 1.875rem
     }
 
-    .page__img:not(:last-child) {
-        margin: 0 0 1.1875rem
+    .page__content>ol,.page__content>p,.page__content>ul {
+        margin-top: .625rem
+    }
+
+    .page__img {
+        margin-top: 1.875rem
     }
 
     .header {
@@ -2284,16 +2333,20 @@ ol .page__list-item {
         font-size: 14px
     }
 
-    .page__title-h1 {
+    .page__title {
         font-size: 26px
     }
 
-    .page__title-h2 {
+    .page__content>h2 {
         font-size: 24px
     }
 
-    .page__title-h3 {
+    .page__content>h3 {
         font-size: 18px
+    }
+
+    .page__content>p {
+        font-size: 16px
     }
 
     .page__text {
@@ -2309,7 +2362,7 @@ ol .page__list-item {
     }
 
     .about-section__more {
-        --padding-y: 17px
+        --padding-y: 16px
     }
 
     .about-section__more {
@@ -2343,6 +2396,10 @@ ol .page__list-item {
     .advantage-item__icon img {
         --side-value: 40px
     }
+
+    .contact-us-section__form-block .form-block__title {
+        font-size: 24px
+    }
 }
 
 @media screen and (max-width:480px) {
@@ -2364,15 +2421,15 @@ ol .page__list-item {
         font-size: calc(24px + 18 * (100vw - 576px)/ (1920 - 576))
     }
 
-    .page__title-h1 {
+    .page__title {
         font-size: calc(26px + 46 * (100vw - 576px)/ (1920 - 576))
     }
 
-    .page__title-h2 {
+    .page__content>h2 {
         font-size: calc(24px + 28 * (100vw - 576px)/ (1920 - 576))
     }
 
-    .page__title-h3 {
+    .page__content>h3 {
         font-size: calc(18px + 24 * (100vw - 576px)/ (1920 - 576))
     }
 
@@ -2395,6 +2452,10 @@ ol .page__list-item {
     .advantage-item__icon img {
         --side-value: calc(40px + 22 * (100vw - 576px) / (1920 - 576))
     }
+
+    .contact-us-section__form-block .form-block__title {
+        font-size: calc(24px + 28 * (100vw - 576px)/ (1920 - 576))
+    }
 }
 
 @media screen and (max-width:992px) and (min-width:576px) {
@@ -2411,7 +2472,7 @@ ol .page__list-item {
     }
 
     .about-section__more {
-        --padding-y: calc(17px + 17 * (100vw - 576px) / (992 - 576))
+        --padding-y: calc(16px + 18 * (100vw - 576px) / (992 - 576))
     }
 
     .about-section__more {
@@ -2424,6 +2485,10 @@ ol .page__list-item {
 }
 
 @media screen and (max-width:1280px) and (min-width:576px) {
+    .page__content>p {
+        font-size: calc(16px + 8 * (100vw - 576px)/ (1280 - 576))
+    }
+
     .page__text {
         font-size: calc(16px + 8 * (100vw - 576px)/ (1280 - 576))
     }
@@ -2473,8 +2538,8 @@ ol .page__list-item {
     }
 
     .header__menu-link svg {
-        width: 18px;
-        height: 18px
+        width: 1.125rem;
+        height: 1.125rem
     }
 
     .header__call-desc {
@@ -2547,8 +2612,16 @@ ol .page__list-item {
 }
 
 @media screen and (any-hover:hover) {
-    .header__menu-link:hover {
+    .button:hover_outlinded {
         border-color: #123
+    }
+
+    .header__menu-item:hover {
+        border-color: #123
+    }
+
+    .submenu-category__link:hover {
+        opacity: 1
     }
 
     .about-section__more:hover {
