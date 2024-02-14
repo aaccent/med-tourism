@@ -39,6 +39,22 @@
             border-color: $black;
         }
     }
+    &__menu-arrow {
+        display: none;
+        color: #000;
+        pointer-events: none;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        transform: translateY(-50%);
+        transform-origin: center;
+        transition: transform 0.2s ease 0s;
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            vertical-align: top;
+        }
+    }
     &__menu-link {
         display: inline-flex;
         display: flex;
@@ -287,7 +303,13 @@
                 .header__submenu {
                     height: auto;
                 }
+                .header__menu-arrow {
+                    transform:  translateY(-50%) rotate(180deg);
+                }
             }
+        }
+        &__menu-arrow {
+            display: block;
         }
         &__menu-link {
             font-size: 1.5rem;
@@ -358,6 +380,11 @@
             font-size: 1.125rem;
             padding: 0.875rem 1.5rem;
         }
+        &__menu-arrow {
+            right: 1.5rem;
+            width: 1.125rem;
+            height: 1.125rem;
+        }
         &__burger {
             padding: 4px 2px;
             width: 18px;
@@ -407,18 +434,15 @@
 .submenu {
     font-family: "Nunito", "sans-serif";
     padding-top: 1.25rem;
-    .swiper {
-        min-width: 0;
-        min-height: 0;
-    }
+    position: relative;
     &__wrapper {
         background-color: $white;
         border-radius: 1.875rem;
-        padding: 2.5rem 1.25rem 0 2.5rem;
-
-        max-height: 676px;
         display: flex;
         flex-direction: column;
+        padding: 2.5rem 1.25rem 0 2.5rem;
+        height: auto;
+        max-height: 676px;
     }
     &__title {
         font-size: 2rem;
@@ -427,13 +451,44 @@
         text-transform: uppercase;
     }
     &__categories {
-        // padding-right: 2.5rem;
-        // max-height: 35.75rem;
-        // overflow: auto
+        margin: 0;
+        overflow: hidden;
     }
     &__category {
         &:not(:last-child) {
             margin: 0 0 1.875rem;
+        }
+    }
+    .swiper-scrollbar {
+        background-color: $background-color;
+        border: 1px solid $border-color;
+        align-self: flex-start;
+        margin-left: 1.875rem;
+        width: 0.625rem;
+        height: calc(100% - 2.5rem);
+        .swiper-scrollbar-drag {
+            background-color: $grey;
+        }
+    }
+    @include min_tablet {
+        &__wrapper {
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            position: relative;
+            overflow: hidden;
+            &:after {
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+                content: "";
+                pointer-events: none;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 2.5rem;
+                z-index: 5;
+            }
+        }
+        &__categories {
+            padding-right: 2.5rem;
         }
     }
     @include tablet {

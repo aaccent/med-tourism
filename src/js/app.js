@@ -1,5 +1,18 @@
 import "./modules/header.js"
 
+new Swiper(".submenu__categories.swiper", {
+    direction: "vertical",
+    slidesPerView: "auto",
+    observe: true,
+    watchOverflow: true,
+    mousewheel: {
+        invert: false
+    },
+    scrollbar: {
+        el: ".swiper-scrollbar"
+    }
+})
+
 new Swiper('.reviews-section__swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -236,4 +249,4 @@ function init() {
     }
 }
 
-ymaps.ready(init);
+// ymaps.ready(init);
