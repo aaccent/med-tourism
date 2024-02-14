@@ -547,7 +547,28 @@ input,textarea {
     background-color: #123;
     display: none;
     color: #fffce6;
-    padding: 1.5rem 2rem
+    padding: 1.5rem 2rem;
+    position: relative
+}
+
+.header__button_mobile span,.header__button_mobile svg {
+    position: relative;
+    z-index: 1
+}
+
+.header__button_mobile:before {
+    background-color: #fff;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .2s ease 0s;
+    -o-transition: opacity .2s ease 0s;
+    transition: opacity .2s ease 0s;
+    z-index: 0
 }
 
 .header__menu {
@@ -796,9 +817,9 @@ input,textarea {
     width: 100%;
     height: 100%;
     opacity: 0;
-    -webkit-transition: background-color .2s ease 0s;
-    -o-transition: background-color .2s ease 0s;
-    transition: background-color .2s ease 0s;
+    -webkit-transition: opacity .2s ease 0s;
+    -o-transition: opacity .2s ease 0s;
+    transition: opacity .2s ease 0s;
     z-index: 0
 }
 
@@ -919,7 +940,7 @@ input,textarea {
     padding: .625rem 1.25rem;
     font-size: 1rem;
     font-weight: 500;
-    margin: 0 0 .625rem;
+    margin: 0 0 1.25rem;
     text-transform: uppercase
 }
 
@@ -1140,6 +1161,10 @@ input,textarea {
     line-height: 1.5;
     text-align: center;
     max-width: 340px
+}
+
+.treatment-section {
+    border-bottom: 1px dashed rgba(17,34,51,.2)
 }
 
 .treatment-section__title {
@@ -1374,12 +1399,16 @@ input,textarea {
     transform: translate(-50%,-50%)
 }
 
-.reviews-section .swipe-icon .clients-section .swipe-icon {
+.clients-section,.reviews-section {
+    border-bottom: 1px dashed rgba(17,34,51,.2)
+}
+
+.clients-section .swipe-icon,.reviews-section .swipe-icon {
     display: none
 }
 
 .faq-section {
-    margin: 0 0 -1.875rem
+    padding-bottom: 0
 }
 
 .faq-section__title {
@@ -1390,8 +1419,7 @@ input,textarea {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 4rem 0 0;
-    padding: 0 0 5.875rem
+    margin: 4rem 0 0
 }
 
 .faq-section__list {
@@ -1401,7 +1429,7 @@ input,textarea {
     align-self: flex-start;
     -ms-flex-preferred-size: 61.5625rem;
     flex-basis: 61.5625rem;
-    margin: 0 0 6.35rem;
+    margin: 0 0 5.875rem;
     padding: 0 1.875rem;
     min-width: 800px
 }
@@ -1785,7 +1813,8 @@ input,textarea {
     text-align: center;
     -webkit-transition: background-color .2s ease 0s;
     -o-transition: background-color .2s ease 0s;
-    transition: background-color .2s ease 0s
+    transition: background-color .2s ease 0s;
+    overflow: hidden
 }
 
 .form__submit .spinner {
@@ -1801,6 +1830,26 @@ input,textarea {
     height: 2rem;
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite
+}
+
+.form__submit .spinner,.form__submit span {
+    position: relative;
+    z-index: 1
+}
+
+.form__submit:before {
+    background-color: #fff;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .2s ease 0s;
+    -o-transition: opacity .2s ease 0s;
+    transition: opacity .2s ease 0s;
+    z-index: 0
 }
 
 .form__file {
@@ -2090,7 +2139,28 @@ input,textarea {
     -ms-flex-align: center;
     align-items: center;
     gap: .625rem;
-    padding: 1.875rem 2.5rem
+    padding: 1.875rem 2.5rem;
+    position: relative
+}
+
+.footer__button span,.footer__button svg {
+    position: relative;
+    z-index: 1
+}
+
+.footer__button:before {
+    background-color: #fff;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .2s ease 0s;
+    -o-transition: opacity .2s ease 0s;
+    transition: opacity .2s ease 0s;
+    z-index: 0
 }
 
 .footer__button-icon {
@@ -2207,6 +2277,10 @@ input,textarea {
         padding: 40px 0 40px 40px
     }
 
+    .about-section__label {
+        margin-top: .625rem
+    }
+
     .footer__col:nth-child(2) {
         -ms-flex-preferred-size: 41.6666666667%;
         flex-basis: 41.6666666667%
@@ -2280,6 +2354,10 @@ input,textarea {
         width: auto
     }
 
+    .about-section__label {
+        margin-top: 1.875rem
+    }
+
     .about-section__img {
         -ms-flex-item-align: end;
         align-self: flex-end;
@@ -2305,7 +2383,7 @@ input,textarea {
     }
 
     .faq-section {
-        margin-bottom: 0
+        padding-bottom: 4.375rem
     }
 
     .faq-section__body {
@@ -2430,7 +2508,7 @@ input,textarea {
     }
 
     .header__menu-item {
-        border-radius: 40px;
+        border-radius: 2.5rem;
         overflow: hidden
     }
 
@@ -2642,6 +2720,10 @@ input,textarea {
         font-size: 1.125rem
     }
 
+    .treatment-section {
+        border-bottom: none
+    }
+
     .treatment-section__body {
         margin-top: 4.375rem
     }
@@ -2671,15 +2753,24 @@ input,textarea {
         margin-top: 2.5rem
     }
 
-    .reviews-section .swipe-icon .clients-section .swipe-icon {
+    .clients-section,.reviews-section {
+        border-bottom-style: solid
+    }
+
+    .clients-section .swipe-icon,.reviews-section .swipe-icon {
         display: block;
         -ms-flex-negative: 0;
         flex-shrink: 0
     }
 
-    .reviews-section .swipe-icon .clients-section .swipe-icon svg {
+    .clients-section .swipe-icon svg,.reviews-section .swipe-icon svg {
         width: 1.5rem;
-        height: 1.5rem
+        height: 1.5rem;
+        vertical-align: top
+    }
+
+    .faq-section {
+        border-bottom: 1px solid rgba(17,34,51,.2)
     }
 
     .faq-section__img {
@@ -2731,6 +2822,10 @@ input,textarea {
         -webkit-transform: translate(0,-2.0625rem) scale(.75);
         -ms-transform: translate(0,-2.0625rem) scale(.75);
         transform: translate(0,-2.0625rem) scale(.75)
+    }
+
+    .form__agreement {
+        margin-top: 0
     }
 
     .footer__container {
@@ -3539,6 +3634,10 @@ input,textarea {
         border-color: #123
     }
 
+    .header__button_mobile:hover:before {
+        opacity: .2
+    }
+
     .submenu-category__link:hover {
         opacity: 1
     }
@@ -3561,8 +3660,16 @@ input,textarea {
         opacity: 1
     }
 
+    .form__submit:hover:before {
+        opacity: .2
+    }
+
     .footer__social-link:hover {
         border-color: #123
+    }
+
+    .footer__button:hover:before {
+        opacity: .2
     }
 }
 @supports (-webkit-appearance:none){

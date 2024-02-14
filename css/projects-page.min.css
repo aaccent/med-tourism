@@ -352,12 +352,7 @@ input,textarea {
     position: relative;
     width: 100%;
     height: 0;
-    overflow: hidden;
-    -webkit-transition: -webkit-transform .3s linear 0s;
-    transition: -webkit-transform .3s linear 0s;
-    -o-transition: transform .3s linear 0s;
-    transition: transform .3s linear 0s;
-    transition: transform .3s linear 0s,-webkit-transform .3s linear 0s
+    overflow: hidden
 }
 
 .card__img img {
@@ -367,7 +362,12 @@ input,textarea {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
-    object-fit: cover
+    object-fit: cover;
+    -webkit-transition: -webkit-transform .3s linear 0s;
+    transition: -webkit-transform .3s linear 0s;
+    -o-transition: transform .3s linear 0s;
+    transition: transform .3s linear 0s;
+    transition: transform .3s linear 0s,-webkit-transform .3s linear 0s
 }
 
 .card__title {
@@ -447,6 +447,7 @@ input,textarea {
 }
 
 .page__content>blockquote {
+    margin: 1.25rem 0;
     max-width: 66.5rem
 }
 
@@ -675,7 +676,28 @@ input,textarea {
     background-color: #123;
     display: none;
     color: #fffce6;
-    padding: 1.5rem 2rem
+    padding: 1.5rem 2rem;
+    position: relative
+}
+
+.header__button_mobile span,.header__button_mobile svg {
+    position: relative;
+    z-index: 1
+}
+
+.header__button_mobile:before {
+    background-color: #fff;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .2s ease 0s;
+    -o-transition: opacity .2s ease 0s;
+    transition: opacity .2s ease 0s;
+    z-index: 0
 }
 
 .header__menu {
@@ -881,7 +903,7 @@ input,textarea {
     padding: .625rem 1.25rem;
     font-size: 1rem;
     font-weight: 500;
-    margin: 0 0 .625rem;
+    margin: 0 0 1.25rem;
     text-transform: uppercase
 }
 
@@ -986,7 +1008,7 @@ input,textarea {
 }
 
 .projects-section {
-    padding-bottom: 6.35rem
+    padding-bottom: 6.25rem
 }
 
 .projects-section__title {
@@ -996,7 +1018,7 @@ input,textarea {
 }
 
 .projects-section__body {
-    margin: 3.125rem 0 0
+    margin-top: 3.125rem
 }
 
 .projects-section__grid {
@@ -1008,7 +1030,7 @@ input,textarea {
     -webkit-column-gap: 1.25rem;
     -moz-column-gap: 1.25rem;
     column-gap: 1.25rem;
-    row-gap: 2.5rem
+    row-gap: 6.25rem
 }
 
 .projects-section__project {
@@ -1020,7 +1042,7 @@ input,textarea {
     border: 1px solid #123;
     border-radius: 6.25rem;
     display: block;
-    margin: 3.125rem auto 0;
+    margin: 6.25rem auto 0;
     padding: .875rem 2.5rem;
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -1323,7 +1345,8 @@ input,textarea {
     text-align: center;
     -webkit-transition: background-color .2s ease 0s;
     -o-transition: background-color .2s ease 0s;
-    transition: background-color .2s ease 0s
+    transition: background-color .2s ease 0s;
+    overflow: hidden
 }
 
 .form__submit .spinner {
@@ -1339,6 +1362,26 @@ input,textarea {
     height: 2rem;
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite
+}
+
+.form__submit .spinner,.form__submit span {
+    position: relative;
+    z-index: 1
+}
+
+.form__submit:before {
+    background-color: #fff;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .2s ease 0s;
+    -o-transition: opacity .2s ease 0s;
+    transition: opacity .2s ease 0s;
+    z-index: 0
 }
 
 .form__file {
@@ -1628,7 +1671,28 @@ input,textarea {
     -ms-flex-align: center;
     align-items: center;
     gap: .625rem;
-    padding: 1.875rem 2.5rem
+    padding: 1.875rem 2.5rem;
+    position: relative
+}
+
+.footer__button span,.footer__button svg {
+    position: relative;
+    z-index: 1
+}
+
+.footer__button:before {
+    background-color: #fff;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .2s ease 0s;
+    -o-transition: opacity .2s ease 0s;
+    transition: opacity .2s ease 0s;
+    z-index: 0
 }
 
 .footer__button-icon {
@@ -1728,6 +1792,10 @@ input,textarea {
         padding: 40px 0 40px 40px
     }
 
+    .about-section__label {
+        margin-top: .625rem
+    }
+
     .footer__col:nth-child(2) {
         -ms-flex-preferred-size: 41.6666666667%;
         flex-basis: 41.6666666667%
@@ -1791,6 +1859,10 @@ input,textarea {
         padding: 20px 20px 0;
         min-width: 0;
         width: auto
+    }
+
+    .about-section__label {
+        margin-top: 1.875rem
     }
 
     .about-section__img {
@@ -1901,7 +1973,7 @@ input,textarea {
     }
 
     .header__menu-item {
-        border-radius: 40px;
+        border-radius: 2.5rem;
         overflow: hidden
     }
 
@@ -2039,6 +2111,10 @@ input,textarea {
         margin-top: 2rem
     }
 
+    .projects-section__grid {
+        row-gap: 2.5rem
+    }
+
     .advantage-section__body {
         margin-top: 4.375rem;
         row-gap: 3.125rem
@@ -2079,6 +2155,10 @@ input,textarea {
         -webkit-transform: translate(0,-2.0625rem) scale(.75);
         -ms-transform: translate(0,-2.0625rem) scale(.75);
         transform: translate(0,-2.0625rem) scale(.75)
+    }
+
+    .form__agreement {
+        margin-top: 0
     }
 
     .footer__container {
@@ -2233,6 +2313,14 @@ input,textarea {
 
     .page__content>ol,.page__content>p,.page__content>ul {
         margin-top: .625rem
+    }
+
+    .page__content>blockquote {
+        margin: .625rem 0 1.25rem
+    }
+
+    .page__content>blockquote footer,.page__content>blockquote p {
+        font-size: .875rem
     }
 
     .page__img {
@@ -2529,6 +2617,10 @@ input,textarea {
         font-size: 26px
     }
 
+    .projects-section__button {
+        margin-top: 50px
+    }
+
     .advantage-section__title {
         font-size: 24px
     }
@@ -2587,6 +2679,10 @@ input,textarea {
 
     .projects-section__title {
         font-size: calc(26px + 16 * (100vw - 576px)/ (1920 - 576))
+    }
+
+    .projects-section__button {
+        margin-top: calc(50px + 50 * (100vw - 576px)/ (1920 - 576))
     }
 
     .advantage-section__title {
@@ -2772,7 +2868,7 @@ input,textarea {
         border-color: #123
     }
 
-    .card__img:hover img {
+    .card:hover img {
         -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
         transform: scale(1.05)
@@ -2780,6 +2876,10 @@ input,textarea {
 
     .header__menu-item:hover {
         border-color: #123
+    }
+
+    .header__button_mobile:hover:before {
+        opacity: .2
     }
 
     .submenu-category__link:hover {
@@ -2795,8 +2895,16 @@ input,textarea {
         color: #fff
     }
 
+    .form__submit:hover:before {
+        opacity: .2
+    }
+
     .footer__social-link:hover {
         border-color: #123
+    }
+
+    .footer__button:hover:before {
+        opacity: .2
     }
 }
 @supports (-webkit-appearance:none){
