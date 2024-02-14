@@ -11,7 +11,7 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-    border: 1px solid $black;
+    border: 1px solid rgba($color: $black, $alpha: 0.5);
     display: flex;
     align-items: center;
     gap: 0.625rem;
@@ -25,12 +25,16 @@
     width: auto;
     height: auto;
     text-transform: uppercase;
+    transition: border-color 0.2s ease 0s;
     &:after {
         content: none
     }
     svg {
         width: 1.5rem;
         height: 1.5rem;
+    }
+    @include ishover {
+        border-color: $black
     }
     @include tablet {
         padding-top: 1.5rem;
@@ -65,6 +69,7 @@
 .reviews-section .swiper-scrollbar,
 .clients-section .swiper-scrollbar {
     background-color: $background-color;
+    border: 1px solid $border-color;
     margin: 1.25rem 0 0;
     position: static;
     height: 0.9375rem;

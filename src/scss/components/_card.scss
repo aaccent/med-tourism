@@ -1,12 +1,13 @@
 .card {
     &__img {
         border-radius: 1.875rem;
+        cursor: pointer;
         padding-top: calc(435 / 450 * 100%);   
         position: relative;     
         width: 100%;
         height: 0;
         overflow: hidden;
-        overflow: hidden;
+        transition: transform 0.3s linear 0s;
         img {
             position: absolute;
             top: 0;
@@ -14,6 +15,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        @include ishover {
+            img {
+                transform: scale(1.05);
+            }
         }
     }
     &__title {

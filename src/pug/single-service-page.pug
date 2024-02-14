@@ -4,7 +4,7 @@ mixin project-item(project)
     article.projects-section__project.card
         .card__img 
             img(src=project.img, alt="")
-        h4.card__title= project.name
+        .card__title= project.name
         p.card__desc 
             | Описание проекта, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок
 
@@ -12,37 +12,35 @@ block head
     title Страница услуги
     link(rel="stylesheet", href="css/single-service-page.min.css")
 block content 
-    .container
+    .container 
         nav.page__breadcrumbs.breadcrumbs 
             ol.breadcrumbs__list 
                 li.breadcrumbs__item 
                     a.breadcrumbs__link(href="/") Главная
                 li.breadcrumbs__item 
                     a.breadcrumbs__link(href="#") О компании   
-        .page__block
-            h1.page__title-h1 О компании
+    .container
+        h1.page__title О компании
+        .page__content
             .page__img 
                 img(src="./images/single-service.png", alt="")
             p.page__text.page__text_long.text
                 | Наша компания сотрудничает с опытными и опытными специалистами в области здравоохранения. 
                 | Мы гордимся тем, что помогаем нашим пациентам восстановить здоровье и жить лучше, предлагая решения, соответствующие их потребностям.
-        .page__block
             h2.page__title-h2 Внутренний заголовок страницы H2
             p.page__text.page__text_short.text
                 | Комфорт и безопасность наших пациентов всегда являются нашим приоритетом при работе с нами. 
                 | Сотрудничая с лучшими медицинскими учреждениями Турции, мы предлагаем медицинские услуги мирового уровня по доступным ценам.
-        .page__block
             h3.page__title-h3 Большой заголовок H3
-            .quote 
+            blockquote.quote 
                 p.quote__text 
                     | Жирмунский, однако, настаивал, что синхрония доступна. Анжамбеман семантически отражает хорей. 
                     | Представленный лексико-семантический анализ является психолингвистическим в своей основе, но графомания возможна.
-                .quote__author © Алексей Кизляр, руководитель отдела маркетинга
+                footer.quote__author © Алексей Кизляр, руководитель отдела маркетинга
             p.page__text.page__text_md
                 | #[em Подтекст, если уловить хореический] ритм или аллитерацию на "р", иллюстрирует культурный размер. 
                 | #[del Голос персонажа интуитивно понятен]. Субъективное восприятие вразнобой нивелирует дольник. 
                 | #[b Ритмический рисунок], чтобы уловить хореический ритм или аллитерацию на "л", неумеренно начинает ритм.
-        .page__block
             h4.page__title-h4 Подзаголовок H4
             ul.page__list 
                 li.page__list-item Жирмунский, однако, настаивал, что синхрония доступна. 

@@ -1,7 +1,7 @@
 mixin faq-item(title, text) 
     .faq-section__list-item.faq-item
         .faq-item__header 
-            h4.faq-item__title= title
+            .faq-item__title= title
             button.faq-item__button(type="button")
         .faq-item__body 
             p.faq-item__text= text
@@ -11,6 +11,42 @@ section.faq-section.section.section_py
         h2.faq-section__title.section__title Отвечаем на вопросы наших пациентов
         .faq-section__body 
             .faq-section__list
+                .faq-section__list-item.faq-item
+                    .faq-item__header 
+                        .faq-item__title Что такое пластическая хирургия?
+                        button.faq-item__button(type="button")
+                    .faq-item__body 
+                        p.faq-item__text Эстетическая хирургия включает в себя хирургические процедуры для улучшения внешнего вида или исправления деформаций.
+                .faq-section__list-item.faq-item
+                    .faq-item__header 
+                        .faq-item__title Какие процедуры пластической хирургии вы предлагаете?
+                        button.faq-item__button(type="button")
+                    .faq-item__body 
+                        p.faq-item__text Эстетическая хирургия включает в себя хирургические процедуры для улучшения внешнего вида или исправления деформаций.
+                .faq-section__list-item.faq-item
+                    .faq-item__header 
+                        .faq-item__title Кто является подходящим кандидатом на плстическую хирургию?
+                        button.faq-item__button(type="button")
+                    .faq-item__body 
+                        p.faq-item__text Эстетическая хирургия включает в себя хирургические процедуры для улучшения внешнего вида или исправления деформаций.
+                .faq-section__list-item.faq-item
+                    .faq-item__header 
+                        .faq-item__title Как проходит процесс восстановления после пластической операции?
+                        button.faq-item__button(type="button")
+                    .faq-item__body 
+                        p.faq-item__text Эстетическая хирургия включает в себя хирургические процедуры для улучшения внешнего вида или исправления деформаций.
+                .faq-section__list-item.faq-item
+                    .faq-item__header 
+                        .faq-item__title Какова стоимость пластической операции?
+                        button.faq-item__button(type="button")
+                    .faq-item__body 
+                        p.faq-item__text Эстетическая хирургия включает в себя хирургические процедуры для улучшения внешнего вида или исправления деформаций.
+                .faq-section__list-item.faq-item
+                    .faq-item__header 
+                        .faq-item__title Предлагаете ли вы услуги проживания после опрерации?
+                        button.faq-item__button(type="button")
+                    .faq-item__body 
+                        p.faq-item__text Эстетическая хирургия включает в себя хирургические процедуры для улучшения внешнего вида или исправления деформаций.
                 -
                     var faqList = [
                         {
@@ -18,11 +54,11 @@ section.faq-section.section.section_py
                             text: "Эстетическая хирургия включает в себя хирургические процедуры для улучшения внешнего вида или исправления деформаций."
                         },
                         {
-                            title: "Какие процедуры пластической хирургии вы предлагаете?",
+                            title: "Какие процедуры пластической хирургии\&lt;br\&gt;вы предлагаете?",
                             text: "Эстетическая хирургия включает в себя хирургические процедуры для улучшения внешнего вида или исправления деформаций."
                         },
                         {
-                            title: "Кто является подходящим кандидатом на плстическую хирургию?",
+                            title: "Кто является подходящим кандидатом#{br}на плстическую хирургию?",
                             text: "Эстетическая хирургия включает в себя хирургические процедуры для улучшения внешнего вида или исправления деформаций."
                         },
                         {
@@ -38,7 +74,7 @@ section.faq-section.section.section_py
                             text: "Эстетическая хирургия включает в себя хирургические процедуры для улучшения внешнего вида или исправления деформаций."
                         },
                     ]
-                each faqItem in faqList 
-                    +faq-item(faqItem.title, faqItem.text)
+                //- each faqItem in faqList 
+                //-     +faq-item(faqItem.title, faqItem.text)
             .faq-section__img 
                 img(src="./images/faq.png", alt="")

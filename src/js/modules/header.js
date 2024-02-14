@@ -20,7 +20,7 @@ const isMobile = {
 }; 
 
 const lockPaddingElements = document.querySelector("header");
-const orderCallEls = document.querySelectorAll(".header__button, .footer__button");
+const orderCallEls = document.querySelectorAll(".header__button, .header__call-desc, .hero-section__button, .footer__button");
 const popupEl = document.querySelector(".popup")
 
 function lockBody() {
@@ -226,9 +226,9 @@ let tabMediaQuery = window.matchMedia("(max-width: 992px)")
 
 tabMediaQuery.addEventListener("change", e => {
     if (!e.matches) {
-        if (burgerMenuEl.querySelector(".header___burger").classList.contains("header__burger_open")) {
-            burgerMenuEl.querySelector(".header___burger").classList.remove("header__burger_open");
-            menuEl.classList.remove("header__menu_open");
+        if (burgerMenuEl.querySelector(".header__burger").classList.contains("header__burger_open")) {
+            burgerMenuEl.querySelector(".header__burger").classList.remove("header__burger_open");
+            menuEl.classList.remove("header__nav_open");
             document.querySelectorAll(".header__menu-item_open").forEach(menuItemEl => menuItemEl.classList.remove("header__menu-item_open"))
         }
     }

@@ -1,5 +1,13 @@
 import "./modules/header.js"
 
+new Swiper(".header__submenu .swiper", {
+    direction: "vertical",
+    scrollbar: {
+        el: ".swiper-scrollbar"
+    }
+})
+
+
 new Swiper('.reviews-section__swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -19,6 +27,7 @@ new Swiper('.reviews-section__swiper', {
     },
     scrollbar: {
       el: '.swiper-scrollbar',
+      draggable: true
     },
     on: {
         init: swiper => {
@@ -66,6 +75,7 @@ new Swiper('.clients-section__swiper', {
     },
     scrollbar: {
       el: '.swiper-scrollbar',
+      draggable: true
     },
     on: {
         init: swiper => {

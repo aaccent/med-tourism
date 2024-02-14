@@ -1,11 +1,11 @@
 extends templates/layout
 
 mixin clinic-item(reverse)
-    article.clinic(class=reverse && "clinic_reverse")
+    article.clinics__item.clinic(class=reverse && "clinic_reverse")
         .clinic__img 
             img(src="./images/clinic.png", alt="")
         .clinic__content 
-            h3.clinic__title Клиника на баумана
+            .clinic__title Клиника на баумана
             .clinic__desc 
                 p
                     | Наша миссия — предоставить вам медицинские услуги мирового уровня для улучшения и качества жизни наших пациентов, 
@@ -24,11 +24,14 @@ block content
                     a.breadcrumbs__link(href="/") Главная
                 li.breadcrumbs__item 
                     a.breadcrumbs__link(href="#") Клиники   
-        .page__block
-            h1.page__title-h1 Клиники
-            - for (var i = 0; i < 4; i++)
-                - var reverse = i % 2 ? "_reversed" : ""
-                +clinic-item(reverse)
+    .container
+        h1.page__title Клиники
+        .page__content
+            .page__clinics.clinics
+                - for (var i = 0; i < 4; i++)
+                    - var reverse = i % 2 ? "_reversed" : ""
+                    +clinic-item(reverse)
+                a.clinics__more.button(href="#") Показать еще
     include ./includes/page-blocks/advantage.pug
     include ./includes/page-blocks/contact-us.pug
 block scripts 

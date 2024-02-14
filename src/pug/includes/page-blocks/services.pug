@@ -1,8 +1,8 @@
 mixin service-item(item)
-    .services-section__service-item.service-item
+    a.services-section__service-item.service-item(href="single-service-page.html")
         .service-item__img 
             img(src=item.img, alt="")
-        h4.service-item__name= item.name
+        .service-item__name= item.name
                     
 section.services-section.section.section_py 
     .services-section__header 

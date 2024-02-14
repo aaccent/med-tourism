@@ -18,6 +18,18 @@
 @import "modules/treatment-section.scss";
 @import "modules/reviews-section.scss";
 @import "modules/clients-section.scss";
+.reviews-section .swipe-icon
+.clients-section .swipe-icon {
+    display: none;
+    @include gap {
+        display: block;
+        flex-shrink: 0;
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
 @import "modules/faq-section.scss";
 @import "modules/article-section.scss";
 @import "modules/contact-us-section.scss";

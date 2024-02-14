@@ -14,7 +14,10 @@
 
 .page {
     &__contacts-list {
-        margin: 0 0 3.125rem;
+        margin: 1.875rem 0 3.125rem;
+        @include phone {
+            margin-top: 1.25rem
+        }
     }
 }
 
@@ -22,30 +25,35 @@
 
 @import "modules/contact-us-section.scss";
 .contact-us-section {
+    margin-bottom: 6.25rem;
+    @include adaptive_value(margin-bottom, 0, 100, 576, 1920);
     &:before {
         content: none
     }
-    &__body {
-        display: flex;
-        gap: 1.25rem;
-        & > * {
-            flex-basis: calc(50% - 0.625rem);
-        }
+    // &__body {
+    //     display: flex;
+    //     gap: 1.25rem;
+    //     & > * {
+    //         flex-grow: 0;
+    //         flex-shrink: 0;
+    //         flex-basis: calc(50% - 0.625rem);
+    //     }
+    // }
+    &__form-block {
+        width: calc(50% - 0.625rem);
     }
-    &__map {
+    .form-block__map {
         border-radius: 1.875rem;
         @include adaptive_value(height, 380, 650, 480, 1280);
+        margin: 3.125rem 0 0;
         overflow: hidden;
         #map {
             width: 100%;
             height: 100%;
         }
-    }
-    &__form-block {
-        padding-right: calc(85 / 1860 * 100%)
-    }
-    .form-block__header {
-        text-align: left;
+        @include phone {
+            margin-top: 1.25rem;
+        }
     }
     form {
         flex-direction: column
@@ -61,6 +69,30 @@
             max-width: none;
         }
     }
+    @include min_desktop {
+        .form-block__header, .form__agreement {
+            text-align: left;
+        }
+        .form-block {
+            padding-left: 4.0625rem;
+            &__title {
+                max-width: 49.375rem
+            }
+            &__subtitle {
+                max-width: 36.125rem;
+            }
+            &__map {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: calc(50% - 0.625rem);
+                height: 100%;
+            }
+            &__form {
+                max-width: 40.875rem;
+            }
+        }
+    }
     @include desktop {
         &__body {
             flex-direction: column;
@@ -72,7 +104,8 @@
         &__form-block {
             padding-right: 0;
             margin: 0 auto;
-            max-width: 768px;
+            width: 100%;
+            max-width: 48rem;
         }
     }
 }
@@ -82,6 +115,7 @@
     display: flex;
     gap: 1.25rem;
     &__item {
+        list-style: none;
         flex-basis: calc((100% - 3.75rem) / 4);
         min-height: 11.25rem;
         .contact-item {
@@ -100,11 +134,15 @@
         }
     }
     @media screen and (max-width: 680px) {
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
         max-width: 30rem;
         &__item {
             flex-basis: 100%;
         }
+    }
+    @include phone {
+        gap: 0.625rem;
     }
 }
 

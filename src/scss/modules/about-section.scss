@@ -54,7 +54,7 @@
         gap: 0.875rem;
         align-self: flex-start;
         font-size: 1.125rem;
-        @include adaptive_value(--padding-y, 17, 34, 576, 992);
+        @include adaptive_value(--padding-y, 16, 34, 576, 992);
         @include adaptive_value(--padding-x, 24, 40, 576, 992);
         padding: var(--padding-y, 2.125rem) var(--padding-x, 2.5rem);
         text-transform: uppercase;
@@ -67,12 +67,12 @@
             border-radius: 6.25rem;
         }
         svg {
-            transform: rotate(-45deg);
             width: 1.5rem;
             height: 1.5rem;
         }
     }
     &__img {
+        pointer-events: none;
         position: absolute;
         bottom: 0;
         width: 668px;

@@ -1,6 +1,6 @@
 mixin review-item(author, text)
     article.reviews-section__review.review-item
-        h4.review-item__author= author
+        .review-item__author= author
         p.review-item__text= text
         button.review-item__more(type="button") 
             svg(viewBox="0 0 24 24")
@@ -12,14 +12,17 @@ section.reviews-section.section_py
         .reviews-section__header 
             h2.reviews-section__title.section__title отзывы наших пациентов
             .reviews-section__swiper-buttons.swiper-buttons
-                .swiper-button-prev 
+                button.swiper-button-prev(type="button") 
                     svg(viewBox='0 0 25 25')
                         use(xlink:href="#swiper-arrow")
                     span Назад
-                .swiper-button-next
+                button.swiper-button-next(type="button")
                     span Далее
                     svg(viewBox='0 0 25 25')
                         use(xlink:href="#swiper-arrow")
+            .swipe-icon
+                svg(width='24' height='24' viewBox='0 0 24 24')
+                    use(xlink:href="#swipe-pointer")
         .reviews-section__body 
             .reviews-section__swiper.swiper 
                 .swiper-wrapper 

@@ -4,7 +4,7 @@ mixin project-item(project)
     article.projects-section__project.card
         .card__img 
             img(src=project.img, alt="")
-        h4.card__title= project.name
+        .card__title= project.name
         p.card__desc 
             | Описание проекта, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок
 
@@ -19,25 +19,25 @@ block content
                     a.breadcrumbs__link(href="/") Главная
                 li.breadcrumbs__item 
                     a.breadcrumbs__link(href="#") Реализованные проекты   
-        .page__block
-            h1.page__title-h1 Реализованные проекты
-            section.about-section.section
-                .projects-section__body 
-                    .projects-section__grid 
-                        -
-                            var projectsList = [
-                                { name: "Трансплантация бороды", img: "./images/service_01.png" },
-                                { name: "Ласик хирургия глаза", img: "./images/service_02.png" },
-                                { name: "Бихэктомия", img: "./images/service_03.png" },
-                                { name: "Трансплантация бровей", img: "./images/service_04.png" },
-                                { name: "Трансплантация волос", img: "./images/service_05.png" },
-                                { name: "Вся хиругия желудка", img: "./images/service_06.png" },
-                                { name: "Желудочное шунтирование", img: "./images/service_07.png" },
-                                { name: "Эстетика зубного эмпланта", img: "./images/service_08.png" },
-                            ]
-                        each projectItem in projectsList   
-                            +project-item(projectItem)
-                    .projects-section__button.button Все проекты
+    .container
+        h1.page__title Реализованные проекты
+        section.about-section.section
+            .projects-section__body 
+                .projects-section__grid 
+                    -
+                        var projectsList = [
+                            { name: "Трансплантация бороды", img: "./images/service_01.png" },
+                            { name: "Ласик хирургия глаза", img: "./images/service_02.png" },
+                            { name: "Бихэктомия", img: "./images/service_03.png" },
+                            { name: "Трансплантация бровей", img: "./images/service_04.png" },
+                            { name: "Трансплантация волос", img: "./images/service_05.png" },
+                            { name: "Вся хиругия желудка", img: "./images/service_06.png" },
+                            { name: "Желудочное шунтирование", img: "./images/service_07.png" },
+                            { name: "Эстетика зубного эмпланта", img: "./images/service_08.png" },
+                        ]
+                    each projectItem in projectsList   
+                        +project-item(projectItem)
+                .projects-section__button.button Все проекты
     include ./includes/page-blocks/advantage.pug
     include ./includes/page-blocks/contact-us.pug
 block scripts 

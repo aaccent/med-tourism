@@ -18,6 +18,23 @@
 @import "modules/contact-us-section.scss";
 @import "modules/footer.scss";
 
+.clinics {
+    &__more {
+        border: 1px solid rgba($color: $black, $alpha: 0.5);
+        display: block;
+        @include adaptive_value(--mt, 0, 100, 576, 1920);
+        margin-top: var(--mt, 6.25rem);
+        margin-bottom: calc(3.125rem + var(--mt, 6.25rem) / 2);
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.875rem 2.5rem;
+        width: fit-content;
+        transition: border-color 0.2s ease 0s;
+        @include ishover {
+            border-color: $black
+        }
+    }
+}
 .clinic {
     display: flex;
     gap: 1.25rem;
@@ -88,6 +105,9 @@
     @include phone {
         padding-top: 3.125rem;
         padding-bottom: 3.125rem;
+        &:first-child {
+            padding-top: 1.25rem;
+        }
         &__title {
             margin: 0 0 0.625rem;
         }

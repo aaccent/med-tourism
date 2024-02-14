@@ -26,9 +26,15 @@
         height: 0.9375rem;
     }
     &__form-block {
-        .form-block__header {
-            color: $beige;
-            text-align: center;
+        .form-block {
+            &__header {
+                color: $beige;
+                text-align: center;
+            }
+            &__title {
+                font-size: 3.25rem;
+                @include adaptive_value(font-size, 24, 52, 576, 1920);
+            }
         }
     }
     // &__title {
@@ -180,6 +186,7 @@
     }
     &__file {
         align-self: flex-start;
+        max-width: 100%;
         &_attached &-field {
             display: none;
         }
@@ -200,14 +207,15 @@
         cursor: pointer;
         font-size: 1.125rem;
         display: flex;
+        align-items: center;
         gap: 0.625rem;
         text-transform: uppercase;
         span {
             font-size: 1.125rem;
         }
         svg {
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
         }
     }
     &__file-doc {
@@ -220,6 +228,9 @@
         text-transform: uppercase;
         span {
             font-size: 1.125rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         button {
             cursor: pointer;
@@ -251,6 +262,7 @@
         font-size: 1rem;
         line-height: 1.5;
         margin: 2.25rem 0 0;
+        opacity: 0.5;
         text-align: center;
     }
     &_sending {
@@ -298,9 +310,11 @@
         &__agreement {
             font-size: 0.75rem;
         }
-        &__file-label svg {
-            width: 1.125rem;
-            height: 1.125rem;
+        &__file-label  {
+            svg {
+                width: 1.125rem;
+                height: 1.125rem;
+            }
         }
         &__file-label, &__file-doc span {
             font-size: 0.875rem;
