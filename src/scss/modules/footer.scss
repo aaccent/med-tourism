@@ -102,6 +102,28 @@
         align-items: center;
         gap: 0.625rem;
         padding: 1.875rem 2.5rem;
+        position: relative;
+        span, svg {
+            position: relative;
+            z-index: 1;
+        }
+        &:before {
+            background-color: $white;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.2s ease 0s;
+            z-index: 0;
+        }
+        @include ishover {
+            &:before {
+                opacity: 0.2;
+            }
+        }
     }
     &__button-icon {
         color: $beige;

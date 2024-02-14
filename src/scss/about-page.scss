@@ -37,6 +37,7 @@
         }
     }
     @include phone {
+        padding-bottom: 6.875rem;
         &__content {
             margin-bottom: -2.5rem;
         }

@@ -18,7 +18,13 @@
 @import "modules/treatment-section.scss";
 @import "modules/reviews-section.scss";
 @import "modules/clients-section.scss";
-.reviews-section .swipe-icon
+.reviews-section, .clients-section {
+    border-bottom: 1px dashed $border-color;
+    @include gap {
+        border-bottom-style: solid;
+    }
+}
+.reviews-section .swipe-icon,
 .clients-section .swipe-icon {
     display: none;
     @include gap {
@@ -27,6 +33,7 @@
         svg {
             width: 1.5rem;
             height: 1.5rem;
+            vertical-align: top
         }
     }
 }

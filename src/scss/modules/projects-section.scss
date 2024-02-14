@@ -1,5 +1,5 @@
 .projects-section {
-    padding-bottom: 6.35rem;
+    padding-bottom: 6.25rem;
     &__title {
         font-size: 2.625rem;
         @include adaptive_value(font-size, 26, 42, 576, 1920);
@@ -7,13 +7,13 @@
         text-transform: uppercase;
     }
     &__body {
-        margin: 3.125rem 0 0;
+        margin-top: 3.125rem;
     }
     &__grid {
         display: flex;
         flex-wrap: wrap;
         column-gap: 1.25rem;
-        row-gap: 2.5rem
+        row-gap: 6.25rem
     }
     &__project {
         flex-basis: calc((100% - 3.75rem) / 4)
@@ -22,7 +22,8 @@
         border: 1px solid $black;
         border-radius: 6.25rem;
         display: block;
-        margin: 3.125rem auto 0;
+        margin: 6.25rem auto 0;
+        @include adaptive_value(margin-top, 50, 100, 576, 1920);
         padding: 0.875rem 2.5rem;
         width: fit-content;
         transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
@@ -40,6 +41,9 @@
     @include gap {
         &__body {
             margin-top: 2rem;
+        }
+        &__grid {
+            row-gap: 2.5rem;
         }
     }
     @include phone {

@@ -13,6 +13,13 @@
 
 @import "page.scss";
 
+.page {
+    &__title {
+        @include gap {
+            margin-bottom: -1.875rem
+        }
+    }
+}
 @import "modules/header.scss";
 @import "modules/advantage-section.scss";
 @import "modules/contact-us-section.scss";
@@ -105,9 +112,6 @@
     @include phone {
         padding-top: 3.125rem;
         padding-bottom: 3.125rem;
-        &:first-child {
-            padding-top: 1.25rem;
-        }
         &__title {
             margin: 0 0 0.625rem;
         }

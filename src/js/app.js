@@ -1,13 +1,5 @@
 import "./modules/header.js"
 
-new Swiper(".header__submenu .swiper", {
-    direction: "vertical",
-    scrollbar: {
-        el: ".swiper-scrollbar"
-    }
-})
-
-
 new Swiper('.reviews-section__swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -188,9 +180,9 @@ document.querySelectorAll("input[name='phone']").forEach(inputElement => {
 // yandex map
 
 function init() {
-    function setMapPins() {
+    function setMapPin() {
         let myCollection = new ymaps.GeoObjectCollection();
-        let coords = [55.7954692462696,49.10686513125719];
+        let coords = mapEl?.dataset.mark?.split(',').map(Number) || [55.7954692462696,49.10686513125719];
         // создание и установка пинов
         myCollection.add(new ymaps.Placemark(coords, {
             iconLayout: "default#image",
@@ -206,14 +198,16 @@ function init() {
 
     async function getCoords () {
         setTimeout(() => {
-            setMapPins(mapPins)
+            setMapPin()
         }, 2000)
     }
     
-    let mapPins;
+    let mapEl = document.getElementById('#map');
+    let center = mapEl?.dataset.center?.split(',').map(Number) || [55.79551291555022,49.10679244528347];
+
     // создание карты
     let map = new ymaps.Map("map", {
-        center: [55.79551291555022,49.10679244528347],
+        center,
         controls: [],
         zoom: 14,
     })

@@ -1,12 +1,11 @@
 .faq-section {
-    margin: 0 0 -1.875rem;
+    padding-bottom: 0;
     &__title {
         max-width: 48.75rem;
     }
     &__body {
         display: flex;
         margin: 4rem 0 0;
-        padding: 0 0 5.875rem;
         @include min_desktop {
             margin-right: -1.875rem;
             overflow: hidden;
@@ -17,7 +16,7 @@
         border-radius: 2.5rem;
         align-self: flex-start;
         flex-basis: 61.5625rem;
-        margin: 0 0 6.35rem;
+        margin: 0 0 5.875rem;
         padding: 0 1.875rem;
         min-width: 800px;
     }
@@ -60,7 +59,7 @@
         }
     }
     @include desktop {
-        margin-bottom: 0;
+        padding-bottom: 4.375rem;
         &__body { 
             flex-direction: column-reverse;
         }
@@ -86,6 +85,7 @@
         }
     }
     @include gap {
+        border-bottom: 1px solid $border-color;
         &__img {
             height: 28.125rem;
         }

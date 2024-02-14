@@ -1,7 +1,7 @@
 extends templates/layout
 
 mixin project-item(project)
-    article.projects-section__project.card
+    a.projects-section__project.card(href="single-service-page.html")
         .card__img 
             img(src=project.img, alt="")
         .card__title= project.name
@@ -21,7 +21,7 @@ block content
                     a.breadcrumbs__link(href="#") Реализованные проекты   
     .container
         h1.page__title Реализованные проекты
-        section.about-section.section
+        section.projects-section.section
             .projects-section__body 
                 .projects-section__grid 
                     -

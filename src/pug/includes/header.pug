@@ -12,35 +12,33 @@ header.header
                     .header__submenu.submenu 
                         .submenu__wrapper
                             h3.submenu__title Услуги
-                            .swiper
-                                .submenu__categories.swiper-wrapper
-                                    .submenu__categories-wrapper.swiper-slide
-                                        .submenu__category.submenu-category
-                                            h4.submenu-category__title Название категории
-                                            ul.submenu-category__list 
-                                                li.submenu-category__item 
-                                                    a.submenu-category__link(href="single-service-page.html") Бихэктомия
-                                                li.submenu-category__item 
-                                                    a.submenu-category__link(href="single-service-page.html") Ласик хирургия глаза
-                                        .submenu__category.submenu-category
-                                            h4.submenu-category__title Трансплантация
-                                            ul.submenu-category__list 
-                                                li.submenu-category__item 
-                                                    a.submenu-category__link(href="single-service-page.html") Трансплантация бороды
-                                                li.submenu-category__item 
-                                                    a.submenu-category__link(href="single-service-page.html") Трансплантация волос
-                                                li.submenu-category__item 
-                                                    a.submenu-category__link(href="single-service-page.html") Трансплантация бровей
-                                        .submenu__category.submenu-category
-                                            h4.submenu-category__title Название катогрии
-                                            ul.submenu-category__list 
-                                                li.submenu-category__item 
-                                                    a.submenu-category__link(href="single-service-page.html") Вся хирургия желудка
-                                                li.submenu-category__item 
-                                                    a.submenu-category__link(href="single-service-page.html") Эстетика зубного эмплантанта
-                                                li.submenu-category__item 
-                                                    a.submenu-category__link(href="single-service-page.html") Бихэктомия
-                                .swiper-scrollbar
+                            .submenu__categories
+                                .submenu__categories-wrapper
+                                    .submenu__category.submenu-category
+                                        h4.submenu-category__title Название категории
+                                        ul.submenu-category__list 
+                                            li.submenu-category__item 
+                                                a.submenu-category__link(href="single-service-page.html") Бихэктомия
+                                            li.submenu-category__item 
+                                                a.submenu-category__link(href="single-service-page.html") Ласик хирургия глаза
+                                    .submenu__category.submenu-category
+                                        h4.submenu-category__title Трансплантация
+                                        ul.submenu-category__list 
+                                            li.submenu-category__item 
+                                                a.submenu-category__link(href="single-service-page.html") Трансплантация бороды
+                                            li.submenu-category__item 
+                                                a.submenu-category__link(href="single-service-page.html") Трансплантация волос
+                                            li.submenu-category__item 
+                                                a.submenu-category__link(href="single-service-page.html") Трансплантация бровей
+                                    .submenu__category.submenu-category
+                                        h4.submenu-category__title Название катогрии
+                                        ul.submenu-category__list 
+                                            li.submenu-category__item 
+                                                a.submenu-category__link(href="single-service-page.html") Вся хирургия желудка
+                                            li.submenu-category__item 
+                                                a.submenu-category__link(href="single-service-page.html") Эстетика зубного эмплантанта
+                                            li.submenu-category__item 
+                                                a.submenu-category__link(href="single-service-page.html") Бихэктомия
                 li.header__menu-item 
                     a.header__menu-link.button(href="about-page.html") О компании
                 li.header__menu-item 
@@ -48,7 +46,7 @@ header.header
                 li.header__menu-item 
                     a.header__menu-link.button(href="contacts-page.html") Контакты
             button.header__button.header__button_mobile.button(type="button") 
-                svg(=width='24' height='24' viewBox='0 0 24 24')
+                svg(width='24' height='24' viewBox='0 0 24 24')
                     path(fill="currentColor" fill-rule='evenodd' clip-rule='evenodd' d='M5 5.25C4.66848 5.25 4.35054 5.3817 4.11612 5.61612C3.8865 5.84573 3.75544 6.15547 3.75017 6.47962C3.98167 10.1882 5.5593 13.685 8.18716 16.3128C10.815 18.9407 14.3118 20.5183 18.0204 20.7498C18.3445 20.7446 18.6543 20.6135 18.8839 20.3839C19.1183 20.1495 19.25 19.8315 19.25 19.5V16.0078L15.3145 14.4336L14.1431 16.3859C13.9423 16.7206 13.5183 16.8453 13.1683 16.6726C10.8487 15.5287 8.97133 13.6513 7.82735 11.3317C7.65471 10.9817 7.77943 10.5577 8.11413 10.3569L10.0664 9.1855L8.49223 5.25H5ZM3.05546 4.55546C3.57118 4.03973 4.27065 3.75 5 3.75H9C9.30668 3.75 9.58246 3.93671 9.69636 4.22146L11.6964 9.22146C11.8331 9.56324 11.7015 9.95373 11.3859 10.1431L9.49809 11.2758C10.3941 12.8212 11.6788 14.1059 13.2242 15.0019L14.3569 13.1141C14.5463 12.7985 14.9368 12.6669 15.2785 12.8036L20.2785 14.8036C20.5633 14.9175 20.75 15.1933 20.75 15.5V19.5C20.75 20.2293 20.4603 20.9288 19.9445 21.4445C19.4288 21.9603 18.7293 22.25 18 22.25C17.9848 22.25 17.9697 22.2495 17.9545 22.2486C13.8709 22.0005 10.0194 20.2664 7.1265 17.3735C4.23364 14.4806 2.49954 10.6291 2.25138 6.54549C2.25046 6.53035 2.25 6.51518 2.25 6.5C2.25 5.77065 2.53973 5.07118 3.05546 4.55546Z')
                 span Записаться на прием
         .header__actions 
