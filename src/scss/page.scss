@@ -74,7 +74,8 @@
         }
         & > ul > li { list-style: disc; }
         & > ol > li { list-style: decimal; }
-        & > li {
+        & > ul > li,
+        & > ol > li  {
             color: #1C2527;
             font-size: 1.25rem;
             opacity: 0.8;
@@ -148,6 +149,10 @@
                 p, footer {
                     font-size: 0.875rem;
                 }
+            }
+            & > ul > li,
+            & > ol > li  {
+                font-size: 1rem;
             }
         }
         &__cover, &__content > picture {
