@@ -105,6 +105,44 @@ new Swiper('.clients-section__swiper', {
     }
 });
 
+const reviewItemEls = document.querySelectorAll(".review-item");
+let initialMaxHeightValue;
+
+function checkReviewHeight(reviewItem) {
+    const textEl = reviewItem.querySelector(".review-item__text");
+    const readMoreEl = reviewItem.querySelector(".review-item__more")
+
+    initialMaxHeightValue = window.innerWidth <= 576 ? 84 : 132
+
+    if (textEl.offsetHeight < textEl.scrollHeight) {
+        !reviewItem.classList.contains("review-item_hide") && reviewItem.classList.add("review-item_hide")
+    } else {
+        if (!reviewItem.classList.contains("review-item_open")) {
+            reviewItem.className = "reviews-section__review review-item"
+        } else if (textEl.offsetHeight <= initialMaxHeightValue) {
+            reviewItem.className = "reviews-section__review review-item"
+            readMoreEl.querySelector("span").innerHTML = "Читать полностью"
+        }
+    }
+}
+
+reviewItemEls.forEach(reviewItemEl => {
+    checkReviewHeight(reviewItemEl);
+    reviewItemEl.querySelector(".review-item__more").addEventListener("click", e => {
+        let readMoreEl = e.currentTarget;
+        if (reviewItemEl.classList.contains("review-item_open")) {
+            reviewItemEl.classList.remove("review-item_open")
+            readMoreEl.querySelector("span").innerHTML = "Читать полностью"
+        } else {
+            reviewItemEl.classList.add("review-item_open")
+            readMoreEl.querySelector("span").innerHTML = "Свернуть текст"
+        }
+    })
+})
+
+window.addEventListener("resize", () => {
+    reviewItemEls.forEach(reviewItemEl => checkReviewHeight(reviewItemEl))
+})
 
 const faqItemHeaderEls = document.querySelectorAll(".faq-item__header");
 

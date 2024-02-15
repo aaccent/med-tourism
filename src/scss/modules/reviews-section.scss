@@ -38,9 +38,12 @@
         font-size: 1.375rem;
         font-weight: 300;
         line-height: 1.5;
+        max-height: calc(1.375rem * 1.5 * 4);
+        overflow: hidden;
     }
     &__more {
-        display: flex;
+        cursor: pointer;
+        display: none;
         align-items: center;
         gap: 0.625rem;
         svg {
@@ -52,6 +55,16 @@
             font-size: 1.125rem;
             font-weight: 400;
             text-transform: uppercase;
+        }
+    }
+    &_hide {
+        .review-item__more {
+            display: flex;
+        }
+    }
+    &_open {
+        .review-item__text {
+            max-height: none;
         }
     }
     @include gap {
@@ -66,6 +79,8 @@
         }
         &__text {
             font-size: 0.875rem;
+            max-height: calc(0.875rem * 1.5 * 4);
+
         }
         &__more {
             span {
