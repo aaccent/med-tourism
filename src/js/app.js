@@ -205,7 +205,7 @@ if (seoSection) {
 
     checkSeoTextHeight()
 
-    window.addEventListener("resize", checkReviewHeight)
+    window.addEventListener("resize", checkSeoTextHeight)
 }
 
 
