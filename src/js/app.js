@@ -185,9 +185,9 @@ if (seoSection) {
             !seoSection.classList.contains("_hide") && seoSection.classList.add("_hide")
         } else {
             if (!seoSection.classList.contains("_open")) {
-                seoSection.className = "article-section"
+                seoSection.className = "article-section section_py "
             } else if (seoTextEl.offsetHeight <= initialMaxHeightValue) {
-                seoSection.className = "article-section"
+                seoSection.className = "article-section section_py "
                 seoReadMoreEl.querySelector("span").innerHTML = "Читать полностью"
             }
         }
