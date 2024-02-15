@@ -27,13 +27,15 @@
             object-fit: cover;
         }
     }
-    &__desc {
+    &__desc p , &__content > p {
         font-size: 1.5rem;
         @include adaptive_value(font-size, 16, 24, 576, 1280);
         font-weight: 400;
         line-height: 1.5;
+    }
+    &__desc p { 
         margin: 3.125rem 0 0;
-        max-width: 80.5rem;
+        max-width: 80.5rem; 
     }
     &__content {
         & > h2, & > h3, & > h4 {
@@ -62,10 +64,6 @@
             margin: 1.25rem 0 0;
         }
         & > p {
-            font-size: 1.5rem;
-            @include adaptive_value(font-size, 16, 24, 576, 1280);
-            font-weight: 400;
-            line-height: 1.5;
             max-width: 65rem;
         }
         & > ul, & > ol {
@@ -135,7 +133,9 @@
             margin-top: 0.625rem;
         }
         &__desc {
-            margin-top: 0.625rem;
+            p {
+                margin-top: 0.625rem;
+            }
         }
         &__content {
             & > h2, & > h3, & > h4 {

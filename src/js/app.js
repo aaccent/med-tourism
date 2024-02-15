@@ -129,9 +129,11 @@ reviewItemEls.forEach(reviewItemEl => {
     })
 })
 
-window.addEventListener("resize", () => {
-    reviewItemEls.forEach(reviewItemEl => checkReviewHeight(reviewItemEl))
-})
+if (reviewItemEls.length) {
+    window.addEventListener("resize", () => {
+        reviewItemEls.forEach(reviewItemEl => checkReviewHeight(reviewItemEl))
+    })
+}
 
 // faq
 const faqItemHeaderEls = document.querySelectorAll(".faq-item__header");
@@ -163,17 +165,47 @@ faqItemHeaderEls.forEach(faqItemHeaderEl => {
 })
 
 // seo 
-const seoDesc = document.querySelector(".article-section__text p");
+const seoSection = document.querySelector(".article-section");
 
-function checkSeoTextHeight () {
-    let initialMaxHeightValue;
-    let lineHeight = 1.5;
-    let styles = getComputedStyle(seoDesc)
-    let fontSize = parseFloat(styles.fontSize);
-    let gap = parseFloat(styles.paddingBottom)
+if (seoSection) {
+    const seoTextEl = seoSection.querySelector(".article-section__text");
+    const seoReadMoreEl = seoSection.querySelector(".article-section__more");
 
-    console.log( 10 * 1.5 * fontSize + gap)
+    function checkSeoTextHeight () {
+        let initialMaxHeightValue;
+        let lineHeight = 1.5;
+        let styles = getComputedStyle(seoTextEl.querySelector("p"))
+        let fontSize = parseFloat(styles.fontSize);
+        let gap = parseFloat(styles.marginBottom)
+        let linesAmount = window.innerWidth <= 576 ? 17 : 10;
+    
+        initialMaxHeightValue = fontSize * lineHeight * linesAmount + gap;
+    
+        if (seoTextEl.offsetHeight < seoTextEl.scrollHeight) {
+            !seoSection.classList.contains("_hide") && seoSection.classList.add("_hide")
+        } else {
+            if (!seoSection.classList.contains("_open")) {
+                seoSection.className = "article-section"
+            } else if (seoTextEl.offsetHeight <= initialMaxHeightValue) {
+                seoSection.className = "article-section"
+                seoReadMoreEl.querySelector("span").innerHTML = "Читать полностью"
+            }
+        }
+    }
 
+    seoReadMoreEl.addEventListener("click", (e) => {
+        if (seoSection.classList.contains("_open")) {
+            seoSection.classList.remove("_open")
+            seoReadMoreEl.querySelector("span").innerHTML = "Читать полностью"
+        } else {
+            seoSection.classList.add("_open")
+            seoReadMoreEl.querySelector("span").innerHTML = "Свернуть текст"
+        }
+    })
+
+    checkSeoTextHeight()
+
+    window.addEventListener("resize", checkReviewHeight)
 }
 
 

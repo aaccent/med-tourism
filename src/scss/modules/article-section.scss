@@ -22,6 +22,8 @@
         text-transform: uppercase;
     }
     &__text {
+        max-height: calc(1.375rem * 1.5 * 10 + 3.125rem);
+        overflow: hidden;
         p {
             font-size: 1.375rem;
             font-weight: 400;
@@ -32,8 +34,9 @@
             }
         }
     }
-    &__link {
-        display: flex;
+    &__more {
+        cursor: pointer;
+        display: none;
         align-items: center;
         gap: 0.625rem;
         svg {
@@ -57,6 +60,16 @@
             height: 100%;
             object-fit: cover;
             vertical-align: top;
+        }
+    }
+    &._hide {
+        .article-section__more {
+            display: flex;
+        }
+    }
+    &._open {
+        .article-section__text {
+            max-height: none;
         }
     }
     @include desktop {
