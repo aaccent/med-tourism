@@ -1676,6 +1676,11 @@ input,textarea {
     text-transform: uppercase
 }
 
+.article-section__text {
+    max-height: 23.75rem;
+    overflow: hidden
+}
+
 .article-section__text p {
     font-size: 1.375rem;
     font-weight: 400;
@@ -1687,23 +1692,22 @@ input,textarea {
     margin: 0 0 3.125rem
 }
 
-.article-section__link {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+.article-section__more {
+    cursor: pointer;
+    display: none;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     gap: .625rem
 }
 
-.article-section__link svg {
+.article-section__more svg {
     width: 1.5rem;
     height: 1.5rem;
     opacity: .5
 }
 
-.article-section__link span {
+.article-section__more span {
     font-size: 1.125rem;
     font-weight: 400;
     text-transform: uppercase
@@ -1724,6 +1728,16 @@ input,textarea {
     -o-object-fit: cover;
     object-fit: cover;
     vertical-align: top
+}
+
+.article-section._hide .article-section__more {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.article-section._open .article-section__text {
+    max-height: none
 }
 
 .contact-us-section {

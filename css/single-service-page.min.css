@@ -417,10 +417,13 @@ input,textarea {
     object-fit: cover
 }
 
-.page__desc {
+.page__content>p,.page__desc p {
     font-size: 1.5rem;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.5
+}
+
+.page__desc p {
     margin: 3.125rem 0 0;
     max-width: 80.5rem
 }
@@ -455,9 +458,6 @@ input,textarea {
 }
 
 .page__content>p {
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.5;
     max-width: 65rem
 }
 
@@ -2386,7 +2386,7 @@ input,textarea {
         margin-top: .625rem
     }
 
-    .page__desc {
+    .page__desc p {
         margin-top: .625rem
     }
 
@@ -2564,6 +2564,10 @@ input,textarea {
         height: 255px
     }
 
+    .about-section {
+        padding-bottom: 6.875rem
+    }
+
     .about-section__content {
         margin-bottom: -2.5rem
     }
@@ -2679,7 +2683,7 @@ input,textarea {
         font-size: 26px
     }
 
-    .page__desc {
+    .page__content>p,.page__desc p {
         font-size: 16px
     }
 
@@ -2689,10 +2693,6 @@ input,textarea {
 
     .page__content>h3 {
         font-size: 18px
-    }
-
-    .page__content>p {
-        font-size: 16px
     }
 
     .about-section__paragraph {
@@ -2843,11 +2843,7 @@ input,textarea {
 }
 
 @media screen and (max-width:1280px) and (min-width:576px) {
-    .page__desc {
-        font-size: calc(16px + 8 * (100vw - 576px)/ (1280 - 576))
-    }
-
-    .page__content>p {
+    .page__content>p,.page__desc p {
         font-size: calc(16px + 8 * (100vw - 576px)/ (1280 - 576))
     }
 }
