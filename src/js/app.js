@@ -1,18 +1,5 @@
 import "./modules/header.js"
 
-new Swiper(".submenu__categories.swiper", {
-    direction: "vertical",
-    slidesPerView: "auto",
-    observe: true,
-    watchOverflow: true,
-    mousewheel: {
-        invert: false
-    },
-    scrollbar: {
-        el: ".swiper-scrollbar"
-    }
-})
-
 new Swiper('.reviews-section__swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -105,15 +92,19 @@ new Swiper('.clients-section__swiper', {
     }
 });
 
+// reviews
 const reviewItemEls = document.querySelectorAll(".review-item");
 let initialMaxHeightValue;
 
 function checkReviewHeight(reviewItem) {
     const textEl = reviewItem.querySelector(".review-item__text");
     const readMoreEl = reviewItem.querySelector(".review-item__more")
+    let remValue = parseFloat(getComputedStyle(document.documentElement).fontSize)
 
-    initialMaxHeightValue = window.innerWidth <= 576 ? 84 : 132
+    initialMaxHeightValue = window.innerWidth <= 576 ? 0.875 * remValue * 1.5 * 4 : 1.375 * remValue * 1.5 * 4
 
+    console.log(initialMaxHeightValue)
+    
     if (textEl.offsetHeight < textEl.scrollHeight) {
         !reviewItem.classList.contains("review-item_hide") && reviewItem.classList.add("review-item_hide")
     } else {
@@ -144,6 +135,7 @@ window.addEventListener("resize", () => {
     reviewItemEls.forEach(reviewItemEl => checkReviewHeight(reviewItemEl))
 })
 
+// faq
 const faqItemHeaderEls = document.querySelectorAll(".faq-item__header");
 
 faqItemHeaderEls.forEach(faqItemHeaderEl => {
@@ -171,6 +163,21 @@ faqItemHeaderEls.forEach(faqItemHeaderEl => {
         }
     })
 })
+
+// seo 
+const seoDesc = document.querySelector(".article-section__text p");
+
+function checkSeoTextHeight () {
+    let initialMaxHeightValue;
+    let lineHeight = 1.5;
+    let styles = getComputedStyle(seoDesc)
+    let fontSize = parseFloat(styles.fontSize);
+    let gap = parseFloat(styles.paddingBottom)
+
+    console.log( 10 * 1.5 * fontSize + gap)
+
+}
+
 
 // contacts-us form
 const inputEls = document.querySelectorAll(".form__input")

@@ -1,4 +1,5 @@
 .faq-section {
+    border-bottom: 1px dashed $border-color;
     padding-bottom: 0;
     &__title {
         max-width: 48.75rem;
@@ -85,7 +86,7 @@
         }
     }
     @include gap {
-        border-bottom: 1px solid $border-color;
+        border-bottom-style: solid;
         &__img {
             height: 28.125rem;
         }
@@ -97,8 +98,8 @@
             padding-right: 0;
         }
         &__img {
-            margin-right: -1rem;
-            margin-left: -1rem;
+            margin-right: -0.625rem;
+            margin-left: -0.625rem;
         }
     }
 }

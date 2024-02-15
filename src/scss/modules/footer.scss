@@ -19,6 +19,7 @@
 }
 
 .footer {
+    background-color: $background-color;
     padding: 3.125rem 0 2.5rem;
     &__container {
         display: flex;
@@ -39,7 +40,7 @@
     }
     &__col {
         &_main {
-            flex-basis: calc(485 / 1860 * 100%);
+            flex-basis: calc(490 / 1860 * 100%);
             // flex-basis: 690px;
             margin-right: 3.125rem;
         }

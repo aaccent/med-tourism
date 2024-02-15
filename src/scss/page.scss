@@ -2,20 +2,38 @@
     &__breadcrumbs {
         margin: 3.125rem 0 0;
     }
-    // &__block {
-    //     display: flex;
-    //     flex-direction: column;
-    //     gap: 1.25rem;
-    //     &:not(:last-child) {
-    //         margin: 0 0 3.125rem;
-    //     }
-    // }
     &__title {
         font-size: 4.5rem;
         @include adaptive_value(font-size, 26, 72, 576, 1920);
         font-weight: 500;
         margin: 1.25rem 0 0;
         text-transform: uppercase;
+    }
+    &__cover, &__content > picture {
+        border-radius: 1.25rem;
+        display: block;
+        position: relative;
+        margin: 3.125rem 0 0;
+        padding-top: calc(733 / 1860 * 100%);
+        height: 0;
+        width: calc(1390 / 1860 * 100%);
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__desc {
+        font-size: 1.5rem;
+        @include adaptive_value(font-size, 16, 24, 576, 1280);
+        font-weight: 400;
+        line-height: 1.5;
+        margin: 3.125rem 0 0;
+        max-width: 80.5rem;
     }
     &__content {
         & > h2, & > h3, & > h4 {
@@ -25,6 +43,9 @@
             font-size: 3.25rem;
             @include adaptive_value(font-size, 24, 52, 576, 1920);
             font-weight: 500;
+            & + p {
+                max-width: 62.9375rem;
+            }
         }
         & > h3 {
             font-size: 2.625rem;
@@ -45,6 +66,7 @@
             @include adaptive_value(font-size, 16, 24, 576, 1280);
             font-weight: 400;
             line-height: 1.5;
+            max-width: 65rem;
         }
         & > ul, & > ol {
             padding-left: 1.875rem;
@@ -88,69 +110,8 @@
             }
         }
     }
-    // &__title-h1 {
-    //     font-size: 4.5rem;
-    //     @include adaptive_value(font-size, 26, 72, 576, 1920);
-    //     font-weight: 500;
-    //     text-transform: uppercase;
-    // }
-    // &__title-h2 {
-    //     font-size: 3.25rem;
-    //     @include adaptive_value(font-size, 24, 52, 576, 1920);
-    //     font-weight: 500;
-    // }
-    // &__title-h3 {
-    //     font-size: 2.625rem;
-    //     @include adaptive_value(font-size, 18, 42, 576, 1920);
-    //     font-weight: 600;
-    //     line-height: 1.48;
-    // }
-    // &__title-h4 {
-    //     font-size: 2rem;
-    //     font-weight: 700;
-    //     line-height: 1.48;
-    // }
-    &__text {
-        font-size: 1.5rem;
-        @include adaptive_value(font-size, 16, 24, 576, 1280);
-        font-weight: 400;
-        line-height: 1.5;
-        &_short {
-            // max-width: calc(1007 / 1860 * 100%);
-            max-width: 62.9375rem;
-        }
-        &_md {
-            // max-width: calc(1040 / 1860 * 100%);
-            max-width: 65rem;
-        }
-        &_long {
-            // max-width: calc(1288 / 1860 * 100%);
-            max-width: 80.5rem;
-
-        }
-    }
-    &__img {
-        border-radius: 1.25rem;
-        position: relative;
-        margin: 3.125rem 0 0;
-        padding-top: calc(733 / 1860 * 100%);
-        height: 0;
-        width: calc(1390 / 1860 * 100%);
-        overflow: hidden;
-        // &:not(:last-child) {
-        //     margin: 0 0 2.5rem;
-        // }
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
     @include tablet {
-        &__img {
+        &__cover, &__content > picture {
             padding-top: calc(195 / 370 * 100%);
             width: auto;
         }
@@ -172,6 +133,9 @@
         &__title {
             margin-top: 0.625rem;
         }
+        &__desc {
+            margin-top: 0.625rem;
+        }
         &__content {
             & > h2, & > h3, & > h4 {
                 margin-top: 1.875rem;
@@ -186,7 +150,7 @@
                 }
             }
         }
-        &__img {
+        &__cover, &__content > picture {
             margin-top: 1.875rem;
         }
     }

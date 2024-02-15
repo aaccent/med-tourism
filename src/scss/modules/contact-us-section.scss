@@ -256,12 +256,13 @@
         }
         button {
             cursor: pointer;
+            flex-shrink: 0;
             position: relative;
             width: 1.5rem;
             height: 1.5rem;
             &:before, &:after {
                 background-color: $beige;
-                border-radius: 100%;
+                border-radius: 100px;
                 content: "";
                 position: absolute;
                 top: 50%;
