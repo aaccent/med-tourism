@@ -434,7 +434,7 @@ input,textarea {
     list-style: decimal
 }
 
-.page__content>li {
+.page__content>ol>li,.page__content>ul>li {
     color: #1c2527;
     font-size: 1.25rem;
     opacity: .8
@@ -2282,6 +2282,10 @@ input,textarea {
 
     .page__content>blockquote footer,.page__content>blockquote p {
         font-size: .875rem
+    }
+
+    .page__content>ol>li,.page__content>ul>li {
+        font-size: 1rem
     }
 
     .page__content>picture,.page__cover {
