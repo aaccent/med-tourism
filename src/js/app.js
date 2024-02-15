@@ -102,8 +102,6 @@ function checkReviewHeight(reviewItem) {
     let remValue = parseFloat(getComputedStyle(document.documentElement).fontSize)
 
     initialMaxHeightValue = window.innerWidth <= 576 ? 0.875 * remValue * 1.5 * 4 : 1.375 * remValue * 1.5 * 4
-
-    console.log(initialMaxHeightValue)
     
     if (textEl.offsetHeight < textEl.scrollHeight) {
         !reviewItem.classList.contains("review-item_hide") && reviewItem.classList.add("review-item_hide")
@@ -294,4 +292,4 @@ function init() {
     }
 }
 
-// ymaps.ready(init);
+ymaps.ready(init);
