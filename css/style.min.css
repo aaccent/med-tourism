@@ -192,7 +192,8 @@ input,textarea {
 }
 
 .clients-section .swiper-scrollbar .swiper-scrollbar-drag,.reviews-section .swiper-scrollbar .swiper-scrollbar-drag {
-    background-color: #453e4a
+    background-color: #453e4a;
+    cursor: pointer
 }
 
 .clients-section__body,.reviews-section__body {
@@ -390,6 +391,7 @@ input,textarea {
 }
 
 .header {
+    background-color: #fafafa;
     padding: 1.25rem 0;
     position: fixed;
     top: 0;
@@ -404,7 +406,7 @@ input,textarea {
 }
 
 .header:before {
-    background-color: #fff;
+    background-color: #fafafa;
     content: "";
     position: absolute;
     top: 0;
@@ -701,7 +703,6 @@ input,textarea {
 }
 
 .submenu__wrapper {
-    background-color: #fff;
     border-radius: 1.875rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -724,25 +725,34 @@ input,textarea {
 
 .submenu__categories {
     margin: 0;
-    overflow: hidden
+    overflow: auto
+}
+
+.submenu__categories::-webkit-scrollbar {
+    background-color: transparent;
+    width: .625rem
+}
+
+.submenu__categories::-webkit-scrollbar-track {
+    background-color: transparent;
+    border: 1px solid rgba(17,34,51,.2);
+    border-radius: 6px
+}
+
+.submenu__categories::-webkit-scrollbar-thumb {
+    background-color: #123;
+    border-radius: 6px
+}
+
+.submenu__categories::-webkit-scrollbar-button:vertical:increment {
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    height: 40px
 }
 
 .submenu__category:not(:last-child) {
     margin: 0 0 1.875rem
-}
-
-.submenu .swiper-scrollbar {
-    background-color: #fafafa;
-    border: 1px solid rgba(17,34,51,.2);
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-    margin-left: 1.875rem;
-    width: .625rem;
-    height: calc(100% - 2.5rem)
-}
-
-.submenu .swiper-scrollbar .swiper-scrollbar-drag {
-    background-color: #453e4a
 }
 
 .submenu-category {
@@ -1376,13 +1386,14 @@ input,textarea {
 .review-item__text {
     font-size: 1.375rem;
     font-weight: 300;
-    line-height: 1.5
+    line-height: 1.5;
+    max-height: 8.25rem;
+    overflow: hidden
 }
 
 .review-item__more {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    cursor: pointer;
+    display: none;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -1399,6 +1410,16 @@ input,textarea {
     font-size: 1.125rem;
     font-weight: 400;
     text-transform: uppercase
+}
+
+.review-item_hide .review-item__more {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.review-item_open .review-item__text {
+    max-height: none
 }
 
 .clients-section__header {
@@ -1450,6 +1471,7 @@ input,textarea {
 }
 
 .faq-section {
+    border-bottom: 1px dashed rgba(17,34,51,.2);
     padding-bottom: 0
 }
 
@@ -1969,6 +1991,8 @@ input,textarea {
 
 .form__file-doc button {
     cursor: pointer;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
     position: relative;
     width: 1.5rem;
     height: 1.5rem
@@ -1976,7 +2000,7 @@ input,textarea {
 
 .form__file-doc button:after,.form__file-doc button:before {
     background-color: #fffce6;
-    border-radius: 100%;
+    border-radius: 100px;
     content: "";
     position: absolute;
     top: 50%;
@@ -2068,6 +2092,7 @@ input,textarea {
 }
 
 .footer {
+    background-color: #fafafa;
     padding: 3.125rem 0 2.5rem
 }
 
@@ -2104,8 +2129,8 @@ input,textarea {
 }
 
 .footer__col_main {
-    -ms-flex-preferred-size: 26.0752688172%;
-    flex-basis: 26.0752688172%;
+    -ms-flex-preferred-size: 26.3440860215%;
+    flex-basis: 26.3440860215%;
     margin-right: 3.125rem
 }
 
@@ -2293,8 +2318,7 @@ input,textarea {
     }
 
     .submenu__wrapper {
-        -webkit-box-shadow: rgba(149,157,165,.2) 0 8px 24px;
-        box-shadow: rgba(149,157,165,.2) 0 8px 24px;
+        background-color: #fff;
         position: relative;
         overflow: hidden
     }
@@ -2537,7 +2561,7 @@ input,textarea {
     }
 
     .header__nav {
-        background-color: #fff;
+        background-color: #fafafa;
         margin: 0;
         padding: 2rem 1.25rem 6.25rem;
         position: fixed;
@@ -2596,11 +2620,6 @@ input,textarea {
     .header__menu-link {
         font-size: 1.5rem;
         padding: 1rem 2rem
-    }
-
-    .header__menu-link svg {
-        width: 1.5rem;
-        height: 1.5rem
     }
 
     .header__menu {
@@ -2847,7 +2866,7 @@ input,textarea {
     }
 
     .faq-section {
-        border-bottom: 1px solid rgba(17,34,51,.2)
+        border-bottom-style: solid
     }
 
     .faq-section__img {
@@ -3092,10 +3111,23 @@ input,textarea {
         padding: .875rem 1.5rem
     }
 
-    .header__menu-arrow {
-        right: 1.5rem;
+    .header__menu-link svg {
         width: 1.125rem;
         height: 1.125rem
+    }
+
+    .header__menu-arrow {
+        top: 1.625rem;
+        right: 1.5rem
+    }
+
+    .header__menu-arrow svg {
+        width: 1.125rem;
+        height: 1.125rem
+    }
+
+    .header__call-icon {
+        display: none
     }
 
     .header__burger {
@@ -3274,7 +3306,8 @@ input,textarea {
     }
 
     .review-item__text {
-        font-size: .875rem
+        font-size: .875rem;
+        max-height: 5.25rem
     }
 
     .review-item__more span {
@@ -3292,8 +3325,8 @@ input,textarea {
     }
 
     .faq-section__img {
-        margin-right: -1rem;
-        margin-left: -1rem
+        margin-right: -.625rem;
+        margin-left: -.625rem
     }
 
     .faq-item__header {
