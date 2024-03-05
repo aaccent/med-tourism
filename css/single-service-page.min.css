@@ -1855,6 +1855,14 @@ input,textarea {
 }
 
 @media (max-width:1440px) {
+    .logo img {
+        height: 5rem
+    }
+
+    .header__nav {
+        margin: 0 20px!important
+    }
+
     .header__actions {
         -webkit-column-gap: 1.25rem;
         -moz-column-gap: 1.25rem;
