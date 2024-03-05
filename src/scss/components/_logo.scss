@@ -3,6 +3,9 @@
         width: auto;
         height: 6.25rem;
         vertical-align: top;
+        @include laptop {
+            height: 5rem;
+        }
         @include tablet {
             height: 4.75rem;
         }

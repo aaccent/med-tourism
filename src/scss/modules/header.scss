@@ -25,6 +25,10 @@
         margin-left: 12.5rem;
         margin-right: 1.875rem;
         @include adaptive_value(margin-left, 20, 200, 1280, 1920);
+
+        @include laptop {
+            margin: 0 20px !important;
+        }
     }
     &__menu-list {
         display: flex;
